@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="style_text_edit">
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textColor">@color/text_color_title</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+    </style>
+    //Style
+    <style name="WindowAnimationFadeInOut">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+</resources>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black_level_6">#f7f8f9</color>
+    <color name="common_page_gray_bg">#f7f8f9</color>
+    <color name="gray_bg">#f7f8f9</color>
+    <color name="player_menu_bg_color">#f7f8f9</color>
+    <color name="remote_bg_f789">#f7f8f9</color>
+    <color name="playback_file_list_unselected_bg">#f7f8f9</color>
+    <color name="minor_3">#f7f8f9</color>
+    <color name="normal_color_background">#f7f8f9</color>
+    <color name="base_card_bg">#fff7f8f9</color>
+    <color name="card_color_background_f7f8f9_to_2a2a2b">#f7f8f9</color>
+    <color name="card_background_f7f8f9_to_333333">#f7f8f9</color>
+    <color name="card_background_f7f8f9_to_424242">#f7f8f9</color>
+
+    <color name="player_menu_text_color">#FF7F7F7F</color>
+    <color name="button_selected">#ff419de4</color>
+    <color name="shape_line">#ffcccccc</color>
+    <color name="shape_line_e1">#ffe1e1e1</color>
+    <color name="text_enable">#ff000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#000000</color>
+    <color name="gray_silvery">#C0C0C0</color>
+
+    <!-- 黄色  -->
+    <!-- 半透明黄色  -->
+
+    <color name="orange">#ffff6600</color>  <!-- 橘黄  -->
+    <!-- 半透明橘黄 -->
+    <color name="orange_fail_progress">#ffb65f</color>  <!-- 半透明橘黄 -->
+    <color name="red_fail_progress">#ff5e62</color>
+
+    <!-- 橘黄  -->
+    <!-- 半透明橘黄 -->
+
+    <!-- 紫色  -->
+    <!-- 半透明紫色  -->
+
+    <color name="red">#ffff0000</color>  <!-- 红色  -->
+    <!-- 半透明红色  -->
+
+    <!-- 绿色  -->
+    <!-- 半透明绿色  -->
+    <color name="calendar_selected_color_green">#5BB437</color> <!-- 远程回放绿色  -->
+
+    <!-- 蓝色  -->
+    <!-- 半透明蓝色  -->
+    <color name="light_blue">#ff0088ff</color>  <!-- 半透明蓝色  -->
+    <color name="preview_selected">#1EB2FF</color><!-- 预览tab选中字体的蓝色  -->
+    <color name="battery_a">#1e71f2</color><!-- 预览tab选中字体的蓝色  -->
+    <color name="battery_b">#1DD2E1</color><!-- 预览tab选中字体的蓝色  -->
+
+    <color name="black">#ff000000</color>  <!-- 黑色  -->
+    <color name="black_account">#FF2f3438</color>  <!-- 黑色  -->
+    <color name="black_transplate">#99000000</color>  <!-- 半透明黑色  -->
+    <color name="black_transplate2">#BB000000</color>  <!-- 半透明黑色  -->
+    <color name="light_black">#ff444444</color>  <!-- 淡黑色  -->
+    <!-- 淡黑色  -->
+
+    <color name="rf_item_bg">#F7F8FA</color>
+
+    <color name="reg_title">#1DB7E5</color>
+
+    <color name="white">#ffffffff</color>  <!-- 白色 -->
+
+    <color name="white_mask">#44ffffff</color>  <!--半透明白色 -->
+
+    <color name="light_white">#ffeeeeee</color>  <!--淡白色 -->
+    <!-- 半透明白色  -->
+
+    <color name="gray">#ff606060</color>    <!-- 灰色  -->
+    <color name="dark_gray_transplate">#4f000000</color>     <!-- 半透明灰色  -->
+    <!-- 半透明灰色  -->
+    <color name="gray_transplate">#66606060</color>     <!-- 半透明灰色  -->
+    <!-- 粉红色  -->
+    <!-- 半透明粉红色  -->
+
+
+    <color name="title_gray_bg">#ffDFDFDF</color>     <!-- 标题栏颜色 ， 淡灰色  -->
+    <!-- 标题栏颜色 ， 淡灰色  -->
+    <!-- 设备列表分割线 ， 淡灰色  -->
+    <!-- 设备列表分割线 ， 淡灰色  -->
+    <!-- 设备列表设备-->
+    <!-- 设备列表通道-->
+    <color name="preview_text_bg_color">#017CC2</color>     <!-- 预览文字说明 ， 淡蓝色  -->
+    <!-- 预览通道背景 ， 淡蓝色 -->
+    <!-- 预览界面背景 ， 淡灰色 -->
+    <!-- 预览通道背景 ， 淡黑色 -->
+    <color name="preset_number_bg_color">#009de1</color>
+    <color name="modal_title_color">#7ec8f7</color>  <!-- 淡蓝色颜色-->
+    <color name="blue_line">#7ec8f7</color>  <!-- 蓝线颜色-->
+    <color name="blue_dark">#017CC2</color>
+    <color name="player_menu_color">#009de1</color>
+    <color name="player_menu_color_sel">#0090b2</color>
+
+    <color name="player_cell_selection_color">#009de1</color>
+    <color name="player_cell_not_sel_color">#ff444444</color>
+
+
+    <color name="wifi_setting_highlight_text">#ff6600</color>
+    <color name="common_blue_text">#009de1</color>
+    <color name="common_blue">#009de1</color>
+    <color name="wifi_setting_button_background">#0094E4</color>
+    <color name="wifi_setting_button_background_sel">#0084CA</color>
+
+    <color name="remote_blue_text">#0095df</color> <!--remote update page upgrade text color-->
+
+    <color name="common_button_background">#009de1</color>
+    <color name="common_button_background_sel">#0084CA</color>
+    <color name="common_button_disable_background">#66009de1</color>
+
+    <color name="battery_date_select_text">#FF9966</color>
+    <color name="battery_date_select_background">#FFEADF</color>
+    <color name="battery_tab_select">#449FD0</color>
+    <color name="battery_tab_not_select">#81BFE0</color>
+    <color name="gray_ea">#eaeaea</color>
+    <color name="gray_f1">#f1f1f1</color>
+
+
+    <color name="schedule_title_blue">#14b7f5</color>
+
+    <color name="battery_wizard_title_text_color">#008fde</color>
+
+    <color name="right_top_button_text_color_on">#009DE5</color>
+    <color name="talk_help_question_color">#f46213</color>
+    <color name="exist_device_color">#CD018EE0</color>
+    <color name="no_network_color">#EDA6A6</color>
+
+    <color name="tms_gray">#768692</color>
+    <color name="ranger_slider_bar">#33B5E5</color>
+
+    <color name="black_light_normal">#919191</color>
+    <color name="app_info_background">#009FDF</color>
+    <color name="gray_normal_bg">#cccccc</color>
+    <color name="common_hint_text">#cccccc</color>
+
+    <color name="battery_help_entry_text_on">#80bedf</color>
+    <color name="battery_help_entry_text_off">#0094E4</color>
+
+    <color name="button_color_disable">#66C4ED</color>
+    <color name="preview_color">#009de1</color>
+
+    <color name="playback_alarm_type_file_dark">#009de1</color>
+    <color name="playback_timing_type_file">#CCE5FF</color>
+    <color name="playback_alarm_type_color">#009DE1</color>
+
+    <color name="notify_header_bg">#ffd3d1</color>
+    <color name="remote_home_header_loading_bg">#e0e0e0</color>
+    <color name="corner_rect_stroke">#e5e5e5</color>
+    <color name="text_title">#21272c</color>
+    <color name="black_level_one_333333">#333333</color>
+    <color name="black_level_one">#333333</color>
+    <color name="common_black_text">#333333</color>
+    <color name="common_gray_text">#919191</color>
+
+    <color name="update_finish">#43bf76</color>
+    <color name="updating">#009de1</color>
+    <color name="update_failed">#ff9500</color>
+
+    <color name="red_dot_color">#ff5e62</color>
+    <color name="common_red_text">#ff5e62</color>
+
+    <color name="player_horizon_view_bg">#cc000000</color>
+    <color name="black_level_5_e1e1e1">#E1E1E1</color>
+    <color name="top_button_text_color_enabled_false">#60009DE5</color>
+    <color name="top_button_text_color_enabled_true">#009DE5</color>
+    <color name="playback_horizon_file_table_bg">#4D4D4E</color>
+    <color name="shadow_color">#FFEAEAEA</color>
+    <color name="dialog_back_color">#99333333</color>
+
+    <color name="btn_bottom_line">#33000000</color>
+    <color name="common_blue_disable">#80bedf</color>
+    <color name="common_orange_text">#FF9A2B</color>
+    <color name="alarm_selected_zone_purple">#9FBEF6</color>
+    <color name="timing_selected_zone">#FFD155</color>
+    <color name="pick_alarm_zone">#E6535E6B</color>
+    <color name="toast_background_color">#FF2B2B2B</color>
+    <color name="blur_color">#FF009CE1</color>
+    <color name="hyperlink_text_color">#FF009CE1</color>
+    <color name="gradient_start">#1e7fef</color>
+    <color name="gradient_end">#1dc1e1</color>
+    <color name="gradient_end_sel">#6e1dc1e1</color>
+    <color name="gradient_start_sel">#6e1e7fef</color>
+
+    <color name="sensitivity_low">#ADD1F9</color>
+    <color name="sensitivity_mid">#61A5F4</color>
+    <color name="sensitivity_high">#1E7FEF</color>
+
+    <color name="sensitivity_default">#ffe1e1e1</color>
+
+    <color name="mode_normal_color">#009DE5</color>
+    <color name="mode_successful_color">#1DD6E0</color>
+    <color name="mode_selected_bg">#E8F0FE</color>
+    <color name="save_qr_code_dialog_bg">#F7F8FD</color>
+    <color name="save_qr_code_text_color">#FFFEFE</color>
+
+    <color name="preview_tips_bg_color">#E6333333</color>
+    <color name="album_video_error_bg">#222222</color>
+    <color name="not_clickable_color_in_black_bg">#245369</color>
+    <color name="display_scroll_shadow_color_start">#DCDCDC</color>
+    <color name="display_scroll_shadow_color_end">#00EFEFEF</color>
+
+    <color name="normal_bg">#F8F8FA</color>
+    <color name="process_background_color">#EFEFF0</color>
+
+
+    <color name="color_nav">#ffffff</color>
+    <color name="white_gray">#f7f8f9</color>
+    <color name="major_color">#333333</color>
+    <color name="minor_2">#CCCCCC</color>
+
+    <color name="dark_button">#ffffff</color>
+    <color name="card_color_background">#eaeaea</color>
+    <color name="card_color_background_bubble">#ffffff</color>
+
+    <color name="divider">#CCCCCC</color>
+<!--    <color name="divider1">#e1e1e1</color>-->
+    <color name="divider1">#e1e1e1</color>
+    <color name="divider2">#dfdfdf</color>
+    <color name="divider3">#e1e1e1</color>
+    <color name="divider_424242">#424242</color>
+    <color name="mask">#66000000</color>
+    <color name="background_bar">#ffffff</color>
+
+    <color name="card_color_background_select">#339A9DAE</color>
+    <color name="normal_color_background_from_ffffff_to_121212">#ffffff</color>
+    <!--02 text colors-->
+    <color name="text_color_main">#ff000000</color>
+    <color name="text_color_title">#ff333333</color>
+    <color name="text_color_from_777777_to_e1e1e1">#777777</color>
+    <color name="text_content">#333333</color>
+    <color name="text_hint">#777777</color>
+    <color name="text_hint2">#777777</color>
+    <color name="text_hint3">#CCCCCC</color>
+    <color name="text_hint1">#e1e1e1</color>
+    <color name="text_hint_from_e1e1e1_to_4d4d4d">#e1e1e1</color>
+    <color name="text_sidebar">#333333</color>
+    <color name="text_disable">#ff7f7f7f</color>
+    <color name="player_divider_bg">#cccccc</color>
+
+    <color name="text_color_777777">#777777</color>
+    <color name="text_color_999999">#999999</color>
+    <color name="text_color_smart_home_title">#1C2B61</color>
+
+    <color name="target_size_yellow">#FF9A2B</color>
+    <color name="card_background_ffffff_to_333333">#FFFFFF</color>
+    <color name="guard_point_disable_background_F9FAFB_to_3A3A3B">#99F9FAFB</color>
+    <color name="card_shadow_color">#298d979e</color>
+    <color name="text_hint_color_4d4d4d">#4D4D4D</color>
+    <color name="background_color_121212">#121212</color>
+    <color name="background_color_333333_to_121212">#80333333</color>
+    <!--透明度为10%的背景色-->
+    <color name="background_color_777777_to_999999">#1A777777</color>
+</resources>

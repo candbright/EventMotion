@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_frag_reg_main"
+    android:background="@color/normal_color_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_frag_reg_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/card_color_background"
+        app:cardElevation="@dimen/dp_6"
+        app:cardCornerRadius="@dimen/dp_8"
+        android:layout_marginHorizontal="@dimen/dp_40"
+        android:layout_marginVertical="@dimen/dp_220"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_frag_reg_title"
+                android:text="REGISTER"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_24"
+                android:layout_marginTop="@dimen/dp_40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_frag_reg_username"
+                android:layout_marginTop="@dimen/dp_40"
+                android:background="@color/white_gray"
+                android:paddingVertical="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_5"
+                style="@style/style_text_edit"
+                android:hint="please enter the username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_frag_reg_password"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingVertical="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_5"
+                android:background="@color/white_gray"
+                style="@style/style_text_edit"
+                android:hint="please enter the password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_frag_reg"
+                android:text="REGISTER"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

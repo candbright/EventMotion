@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_nav">#000000</color>
+    <color name="white_gray">#eaeaea</color>
+    <color name="major_color">#E1E1E1</color>
+    <color name="minor_2">#4D4D4D</color>
+    <color name="minor_3">#111111</color>
+    <color name="dark_button">#222222</color>
+    <color name="card_color_background">#2A2A2B</color>
+    <color name="card_color_background_bubble">#424242</color>
+    <color name="white_mask">#442A2A2B</color>
+    <color name="card_color_background_f7f8f9_to_2a2a2b">#2a2a2b</color>
+    <color name="divider">#424242</color>
+    <color name="divider1">#424242</color>
+    <color name="divider2">#424242</color>
+    <color name="divider3">#00000000</color>
+    <color name="mask">#66000000</color>
+    <color name="background_bar">#000000</color>
+    <color name="normal_color_background">#121212</color>
+    <color name="normal_color_background_from_ffffff_to_121212">#121212</color>
+    <!-- text colors-->
+    <color name="text_color_main">#E1E1E1</color>
+    <color name="text_color_title">#E1E1E1</color>
+    <color name="text_color_from_777777_to_e1e1e1">#e1e1e1</color>
+    <color name="text_content">#E1E1E1</color>
+    <color name="text_hint">#999999</color>
+    <color name="text_hint1">#424242</color>
+    <color name="text_hint2">#999999</color>
+    <color name="text_hint3">#4D4D4D</color>
+    <color name="text_hint_from_e1e1e1_to_4d4d4d">#4d4d4d</color>
+    <color name="text_disable">#424242</color>
+    <color name="text_sidebar">#999999</color>
+    <color name="mode_selected_bg">#CF1E70F2</color>
+    <color name="player_divider_bg">#2A2A2B</color>
+    <color name="sensitivity_default">#ff777777</color>
+    <color name="base_card_bg">#ff323232</color>
+    <color name="card_background_ffffff_to_333333">#333333</color>
+    <color name="card_background_f7f8f9_to_333333">#333333</color>
+    <color name="card_background_f7f8f9_to_424242">#424242</color>
+    <color name="guard_point_disable_background_F9FAFB_to_3A3A3B">#CC424242</color>
+    <color name="text_color_smart_home_title">#E1E1E1</color>
+    <color name="background_color_333333_to_121212">#80121212</color>
+    <color name="shape_line_e1">#80424242</color>
+
+    <!--透明度为10%的背景色-->
+    <color name="background_color_777777_to_999999">#1A999999</color>
+</resources>
