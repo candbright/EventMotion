@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cl_frag_reg_main"
-    android:background="@color/normal_color_background"
+    android:background="@color/color_background_normal"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.cardview.widget.CardView
@@ -11,13 +11,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="@color/card_color_background"
+        app:cardBackgroundColor="@color/color_background_card"
         app:cardElevation="@dimen/dp_6"
         app:cardCornerRadius="@dimen/dp_8"
         android:layout_marginHorizontal="@dimen/dp_40"
-        android:layout_marginVertical="@dimen/dp_220"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center_horizontal"
@@ -29,13 +28,13 @@
                 android:text="REGISTER"
                 android:textStyle="bold"
                 android:textSize="@dimen/sp_24"
-                android:layout_marginTop="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_30"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:id="@+id/et_frag_reg_username"
-                android:layout_marginTop="@dimen/dp_40"
-                android:background="@color/white_gray"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@color/color_background_edit"
                 android:paddingVertical="@dimen/dp_10"
                 android:paddingLeft="@dimen/dp_5"
                 style="@style/style_text_edit"
@@ -47,15 +46,25 @@
                 android:layout_marginTop="@dimen/dp_10"
                 android:paddingVertical="@dimen/dp_10"
                 android:paddingLeft="@dimen/dp_5"
-                android:background="@color/white_gray"
+                android:background="@color/color_background_edit"
                 style="@style/style_text_edit"
                 android:hint="please enter the password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_frag_confirm_password"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingVertical="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_5"
+                android:background="@color/color_background_edit"
+                style="@style/style_text_edit"
+                android:hint="please confirm the password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_frag_reg"
                 android:text="REGISTER"
-                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginVertical="@dimen/dp_20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

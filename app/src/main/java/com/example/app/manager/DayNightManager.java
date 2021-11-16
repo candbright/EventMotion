@@ -1,7 +1,6 @@
-package com.example.app.util;
+package com.example.app.manager;
 
 import android.app.Activity;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -11,10 +10,10 @@ import com.example.app.R;
  * created by wyh in 2021/11/15
  */
 public class DayNightManager {
-    private Activity context;
+    private Activity activity;
 
-    public DayNightManager(Activity context) {
-        this.context = context;
+    public DayNightManager(Activity activity) {
+        this.activity = activity;
     }
 
     //切换日夜模式
@@ -23,8 +22,8 @@ public class DayNightManager {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         else
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        context.getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
-        context.recreate();
+        activity.getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
+        activity.recreate();
 
     }
 }

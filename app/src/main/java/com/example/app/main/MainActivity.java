@@ -1,8 +1,6 @@
 package com.example.app.main;
 
 
-import android.util.Log;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SortedList;
@@ -21,7 +19,7 @@ import com.example.app.item.SortedItem;
 public class MainActivity extends ExitActivity {
 
     private static final String TAG = "MainActivity";
-    public static final int INDEX_NONE = 0;
+    public static final int INDEX_GO_ACTIVITY_REGISTER = 0;
     public static final int INDEX_LIGHT_MODE_NIGHT = 1;
     public static final int INDEX_LIGHT_MODE_DAY = 2;
 
@@ -48,7 +46,7 @@ public class MainActivity extends ExitActivity {
         sortedAdapter = new SortedAdapter();
         mData = new SortedList<SortedItem>(SortedItem.class, new MySortedListAdapterCallback(sortedAdapter));
         sortedAdapter.setSortedList(mData);
-        mData.add(new SimpleCardItem("X X X X").setIndex(INDEX_NONE));
+        mData.add(new SimpleCardItem("立即注册").setIndex(INDEX_GO_ACTIVITY_REGISTER));
         mData.add(new SimpleCardItem("黑夜模式").setIndex(INDEX_LIGHT_MODE_NIGHT));
         mData.add(new SimpleCardItem("白天模式").setIndex(INDEX_LIGHT_MODE_DAY));
         recyclerView.setAdapter(sortedAdapter);

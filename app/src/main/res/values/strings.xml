@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="app_name">Bright</string>
+    <string name="common_refresh">Refresh</string>
+    <string name="fragment_register_title">REGISTER</string>
 </resources>
