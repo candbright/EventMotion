@@ -58,6 +58,7 @@
                 android:paddingLeft="@dimen/dp_5"
                 android:background="@color/color_background_edit"
                 style="@style/style_text_edit"
+                android:imeOptions="actionGo"
                 android:hint="please confirm the password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

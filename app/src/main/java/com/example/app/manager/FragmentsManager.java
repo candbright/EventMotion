@@ -20,13 +20,6 @@ public class FragmentsManager<Activity extends BaseActivity> {
         fragmentManager = activity.getSupportFragmentManager();
     }
 
-    public void initFragment() {
-        FragmentManager fragmentManager = activity.getSupportFragmentManager();
-        if (null == fragmentManager) {
-            return;
-        }
-    }
-
     public void addFragmentToContainer(int containerViewId, BaseFragment fragment) {
 
         if (null == fragment) {
