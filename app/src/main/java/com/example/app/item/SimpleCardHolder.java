@@ -28,13 +28,10 @@ public class SimpleCardHolder extends ItemViewHolder<SimpleCardItem> {
         if (data.getExplainText() != null) {
             mTvExplain.setText(data.getExplainText());
         }
-        mMainView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mListener != null) {
-                    Bundle extraData = new Bundle();
-                    mListener.onItemEvent(String.valueOf(data.getIndex()), true, extraData);
-                }
+        mMainView.setOnClickListener(v -> {
+            if (mListener != null) {
+                Bundle extraData = new Bundle();
+                mListener.onItemEvent(String.valueOf(data.getIndex()), true, extraData);
             }
         });
     }

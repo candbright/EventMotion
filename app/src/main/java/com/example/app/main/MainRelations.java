@@ -6,6 +6,8 @@ import static com.example.app.main.MainActivity.INDEX_GO_ACTIVITY_REGISTER;
 
 import android.content.Intent;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.app.base.activity.BaseExternalRelations;
 import com.example.app.login.LoginActivity;
 import com.example.app.manager.DayNightManager;
@@ -37,6 +39,12 @@ public class MainRelations extends BaseExternalRelations<MainActivity> {
                     break;
             }
 
+        });
+        activity.setRlL(new RecyclerView.OnFlingListener() {
+            @Override
+            public boolean onFling(int velocityX, int velocityY) {
+                return false;
+            }
         });
     }
 }

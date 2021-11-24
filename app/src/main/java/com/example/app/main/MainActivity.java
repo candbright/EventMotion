@@ -61,4 +61,8 @@ public class MainActivity extends ExitActivity {
     public void setOnItemEventListener(OnItemEventListener listener) {
         sortedAdapter.setOnItemEventListener(listener);
     }
+
+    public void setRlL(RecyclerView.OnFlingListener onFlingListener) {
+        recyclerView.setOnFlingListener(onFlingListener);
+    }
 }
