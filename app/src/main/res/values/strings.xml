@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bright</string>
-    <string name="common_refresh">Refresh</string>
-    <string name="fragment_register_title">REGISTER</string>
+    <string name="app_name">E舞</string>
+    <string name="common_refresh">刷新</string>
+    <string name="fragment_register_title">注册</string>
+    <string name="navigation_title_fancy">花式模式</string>
+    <string name="navigation_title_speed">竞速模式</string>
 </resources>

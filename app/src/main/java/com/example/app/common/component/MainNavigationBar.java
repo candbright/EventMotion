@@ -37,7 +37,7 @@ public class MainNavigationBar extends BaseConstraintLayout {
     }
 
     @Override
-    public int layoutId() {
+    protected int layoutId() {
         return R.layout.component_navigation_bar_main;
     }
 
@@ -50,5 +50,10 @@ public class MainNavigationBar extends BaseConstraintLayout {
 
     private void initView() {
         //
+    }
+
+    public MainNavigationBar setTitle(String titleText) {
+        mTvTitle.setText(titleText);
+        return this;
     }
 }

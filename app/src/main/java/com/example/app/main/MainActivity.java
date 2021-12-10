@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.SortedList;
 
 import com.example.app.R;
 import com.example.app.base.activity.BaseExitActivity;
-import com.example.app.common.adapter.MySortedListAdapterCallback;
-import com.example.app.common.listener.OnItemEventListener;
-import com.example.app.common.adapter.SortedAdapter;
 import com.example.app.base.adapter.SortedItem;
+import com.example.app.common.adapter.MySortedListAdapterCallback;
+import com.example.app.common.adapter.SortedAdapter;
+import com.example.app.common.component.MainNavigationBar;
+import com.example.app.common.listener.OnItemEventListener;
+import com.example.app.global.GlobalApp;
 
 /**
  * <p>created by wyh in 2021/11/15</p>
@@ -23,6 +25,7 @@ public class MainActivity extends BaseExitActivity {
     public static final int INDEX_LIGHT_MODE_DAY = 2;
 
     RecyclerView recyclerView;
+    MainNavigationBar navigationBar;
     SortedAdapter sortedAdapter;
     SortedList<SortedItem> mData;
 
@@ -39,6 +42,8 @@ public class MainActivity extends BaseExitActivity {
 
     private void initView() {
         recyclerView = findViewById(R.id.rl_group);
+        navigationBar = findViewById(R.id.nb_main);
+        navigationBar.setTitle(GlobalApp.getResString(R.string.navigation_title_fancy));
     }
 
     private void initData() {
