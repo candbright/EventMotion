@@ -6,17 +6,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SortedList;
 
 import com.example.app.R;
-import com.example.app.base.activity.ExitActivity;
-import com.example.app.common.MySortedListAdapterCallback;
-import com.example.app.common.OnItemEventListener;
-import com.example.app.common.SortedAdapter;
-import com.example.app.item.SimpleCardItem;
-import com.example.app.item.SortedItem;
+import com.example.app.base.activity.BaseExitActivity;
+import com.example.app.common.adapter.MySortedListAdapterCallback;
+import com.example.app.common.listener.OnItemEventListener;
+import com.example.app.common.adapter.SortedAdapter;
+import com.example.app.base.adapter.SortedItem;
 
 /**
- * created by wyh in 2021/11/15
+ * <p>created by wyh in 2021/11/15</p>
  */
-public class MainActivity extends ExitActivity {
+public class MainActivity extends BaseExitActivity {
 
     private static final String TAG = "MainActivity";
     public static final int INDEX_GO_ACTIVITY_REGISTER = 0;
@@ -44,11 +43,8 @@ public class MainActivity extends ExitActivity {
 
     private void initData() {
         sortedAdapter = new SortedAdapter();
-        mData = new SortedList<SortedItem>(SortedItem.class, new MySortedListAdapterCallback(sortedAdapter));
+        mData = new SortedList<>(SortedItem.class, new MySortedListAdapterCallback(sortedAdapter));
         sortedAdapter.setSortedList(mData);
-        mData.add(new SimpleCardItem("立即注册").setIndex(INDEX_GO_ACTIVITY_REGISTER));
-        mData.add(new SimpleCardItem("黑夜模式").setIndex(INDEX_LIGHT_MODE_NIGHT));
-        mData.add(new SimpleCardItem("白天模式").setIndex(INDEX_LIGHT_MODE_DAY));
         recyclerView.setAdapter(sortedAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

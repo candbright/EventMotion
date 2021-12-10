@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import com.example.app.R;
 
 /**
- * created by wyh in 2021/11/15
+ * <p>created by wyh in 2021/11/15</p>
  */
 public class DayNightManager {
     private Activity activity;

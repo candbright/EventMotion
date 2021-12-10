@@ -11,12 +11,12 @@ import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.app.R;
-import com.example.app.base.fragment.ToolFragment;
+import com.example.app.base.fragment.BaseFragment;
 
 /**
- * created by wyh in 2021/10/26
+ * <p>created by wyh in 2021/10/26</p>
  */
-public class RegisterFragment extends ToolFragment {
+public class RegisterFragment extends BaseFragment<RegisterFragmentRelations> {
     private static final String TAG = "RegisterFragment";
     private EditText usernameEdit;
     private EditText passwordEdit;
@@ -41,20 +41,20 @@ public class RegisterFragment extends ToolFragment {
         usernameEdit = rootView.findViewById(R.id.et_frag_reg_username);
         usernameEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
         passwordEdit = rootView.findViewById(R.id.et_frag_reg_password);
-        passwordEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        passwordEdit.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
         passwordEdit.setTypeface(Typeface.DEFAULT);
         passwordEdit.setTransformationMethod(new PasswordTransformationMethod());
         passwordEdit.setOnEditorActionListener((v, actionId, event) -> false);
         passwordConfirmEdit = rootView.findViewById(R.id.et_frag_confirm_password);
-        passwordConfirmEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        passwordConfirmEdit.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
         passwordConfirmEdit.setTypeface(Typeface.DEFAULT);
         passwordConfirmEdit.setTransformationMethod(new PasswordTransformationMethod());
         saveButton = rootView.findViewById(R.id.btn_frag_reg);
     }
 
     @Override
-    protected void newExternalRelations() {
-        new RegisterFragmentRelations(this);
+    protected RegisterFragmentRelations newExternalRelations() {
+        return new RegisterFragmentRelations(this);
     }
 
     public void setSaveListener(View.OnClickListener onClickListener) {

@@ -13,7 +13,7 @@ import com.example.app.login.LoginActivity;
 import com.example.app.manager.DayNightManager;
 
 /**
- * created by wyh in 2021/11/15
+ * <p>created by wyh in 2021/11/15</p>
  */
 public class MainRelations extends BaseExternalRelations<MainActivity> {
 

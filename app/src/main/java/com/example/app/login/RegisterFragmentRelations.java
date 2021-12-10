@@ -5,7 +5,7 @@ import android.view.inputmethod.EditorInfo;
 import com.example.app.base.fragment.BaseFragmentExternalRelations;
 
 /**
- * created by wyh in 2021/11/16
+ * <p>created by wyh in 2021/11/16</p>
  */
 public class RegisterFragmentRelations extends BaseFragmentExternalRelations<RegisterFragment> {
     public RegisterFragmentRelations(RegisterFragment fragment) {

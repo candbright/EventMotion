@@ -5,46 +5,41 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import com.example.app.R;
 
 /**
  * 事件动机模式的View模块：
- * 当包含者Activity不需要调用ExternalRelations中的业务数据或方法时，则使用这个BaseFragment，否则使用BaseFragment2。
+ * 当包含者Activity需要调用ExternalRelations中的业务数据或方法时，则使用这个BaseFragment2，否则使用BaseFragment。
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment<ExternalRelations extends BaseFragmentExternalRelations> extends BaseToolFragment {
 
-    private ViewGroup mInflateLayout;
-    protected RelativeLayout mContainerLayout;
+    private ExternalRelations mExternalRelations;
     private FragmentLifecycleListener mLifecycleListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mInflateLayout = (ViewGroup) inflater.inflate(R.layout.fragment_base, container, false);
-        mContainerLayout = mInflateLayout.findViewById(R.id.main_page_container);
-        View inflateLayout = inflater.inflate(getLayoutResourceID(), null, false);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        mContainerLayout.addView(inflateLayout, params);
-        return mInflateLayout;
+        return inflater.inflate(getLayoutResourceID(), container);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         onCreateViewModule();
-        newExternalRelations(); // new ExternalRelations(this) and  setLifecycleListener(), create modules, and set listeners for modules.
+        mExternalRelations = newExternalRelations(); // new ExternalRelations(this) and  setLifecycleListener(), create modules, and set listeners for modules.
         if (mLifecycleListener != null) {
             mLifecycleListener.onModulesCreated();
         }
     }
 
     protected abstract int getLayoutResourceID();
+
     protected abstract void onCreateViewModule();
-    protected abstract void newExternalRelations();
+
+    protected abstract ExternalRelations newExternalRelations();
+
+    public ExternalRelations getExternalRelations() {
+        return mExternalRelations;
+    }
 
     protected void setLifecycleListener(FragmentLifecycleListener activityLifecycleListener) {
         mLifecycleListener = activityLifecycleListener;

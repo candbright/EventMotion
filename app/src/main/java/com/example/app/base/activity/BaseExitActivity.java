@@ -8,7 +8,7 @@ import java.util.TimerTask;
 /**
  * created by wyh in 2021/11/16
  */
-public abstract class ExitActivity extends BaseActivity {
+public abstract class BaseExitActivity extends BaseActivity {
 
     private Toast exitToast;
 

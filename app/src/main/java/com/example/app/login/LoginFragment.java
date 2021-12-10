@@ -1,14 +1,13 @@
 package com.example.app.login;
 
-import androidx.fragment.app.Fragment;
-
 import com.example.app.R;
-import com.example.app.base.fragment.ToolFragment;
+import com.example.app.base.fragment.BaseFragmentExternalRelations;
+import com.example.app.base.fragment.BaseToolFragment;
 
 /**
- * created by wyh in 2021/10/26
+ * <p>created by wyh in 2021/10/26</p>
  */
-public class LoginFragment extends ToolFragment {
+public class LoginFragment extends BaseToolFragment {
     @Override
     protected int getLayoutResourceID() {
         return R.layout.fragment_register;
@@ -24,7 +23,8 @@ public class LoginFragment extends ToolFragment {
     }
 
     @Override
-    protected void newExternalRelations() {
+    protected BaseFragmentExternalRelations newExternalRelations() {
 
+        return null;
     }
 }

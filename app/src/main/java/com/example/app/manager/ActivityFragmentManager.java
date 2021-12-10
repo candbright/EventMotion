@@ -1,21 +1,19 @@
 package com.example.app.manager;
 
-import android.util.Log;
-
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.app.R;
 import com.example.app.base.activity.BaseActivity;
 import com.example.app.base.fragment.BaseFragment;
 
 /**
- * created by wyh in 2021/11/16
+ * <p>created by wyh in 2021/11/16</p>
  */
-public class FragmentsManager<Activity extends BaseActivity> {
+public class ActivityFragmentManager<Activity extends BaseActivity> {
     private Activity activity;
     private FragmentManager fragmentManager;
-    public FragmentsManager(Activity activity) {
+
+    public ActivityFragmentManager(Activity activity) {
         this.activity = activity;
         fragmentManager = activity.getSupportFragmentManager();
     }

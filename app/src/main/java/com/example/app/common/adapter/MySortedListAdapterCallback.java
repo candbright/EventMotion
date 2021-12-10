@@ -1,13 +1,10 @@
-package com.example.app.common;
+package com.example.app.common.adapter;
 
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SortedListAdapterCallback;
 
-import com.example.app.item.SortedItem;
+import com.example.app.base.adapter.SortedItem;
 
-/**
- * author : wyh
- */
 public class MySortedListAdapterCallback extends SortedListAdapterCallback<SortedItem> {
 
     public MySortedListAdapterCallback(RecyclerView.Adapter adapter) {
@@ -16,7 +13,7 @@ public class MySortedListAdapterCallback extends SortedListAdapterCallback<Sorte
 
     @Override
     public int compare(SortedItem o1, SortedItem o2) {
-        return o1.getIndex() - o2.getIndex();
+        return o1.getSortedIndex() - o2.getSortedIndex();
     }
 
     @Override
@@ -26,6 +23,6 @@ public class MySortedListAdapterCallback extends SortedListAdapterCallback<Sorte
 
     @Override
     public boolean areItemsTheSame(SortedItem item1, SortedItem item2) {
-        return item1.getIndex() == item2.getIndex();
+        return item1.getSortedIndex() == item2.getSortedIndex();
     }
 }
