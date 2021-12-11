@@ -1,20 +1,33 @@
 package com.example.app.base.adapter;
 
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewbinding.ViewBinding;
 
-/**
- * author : yuhao wang
- * date   : 2021/10/19 10:12
- */
-public abstract class SortedItem implements Cloneable {
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+
+public abstract class SortedItem<Holder extends BaseViewHolder, BindingView extends ViewBinding> implements Cloneable {
     private int sortedIndex;
 
-    public abstract int layoutID();
+    public Holder bindViewHolder(ViewGroup parent) {
+        ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
+        Class cls = (Class) type.getActualTypeArguments()[1];
+        BindingView viewBinding = null;
+        try {
+            //View view = LayoutInflater.from(parent.getContext()).inflate(layoutID(), parent, false);
+            Method inflate = cls.getDeclaredMethod("inflate", LayoutInflater.class, ViewGroup.class, boolean.class);
+            viewBinding = (BindingView) inflate.invoke(null, LayoutInflater.from(parent.getContext()), parent, false);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return createViewHolder(viewBinding);
+    }
 
-    public abstract RecyclerView.ViewHolder obtainViewHolder(ViewGroup parent, boolean attachToRoot);
+    protected abstract Holder createViewHolder(BindingView viewBinding);
 
     public int getSortedIndex() {
         return sortedIndex;

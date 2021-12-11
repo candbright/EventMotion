@@ -11,5 +11,7 @@
     <color name="color_text_hint">#777777</color>
     <color name="color_text_card">#333333</color>
 
+    <color name="color_divider_line">#CCCCCC</color>
+
 
 </resources>

@@ -32,7 +32,7 @@ public abstract class BaseDiffAdapter extends RecyclerView.Adapter<BaseViewHolde
         if (datas == null || position < 0 || position >= datas.size()) {
             return -1;
         }
-        return datas.get(position).layoutID();
+        return datas.get(position).getClass().hashCode();
     }
 
     public void notifyDiff() {

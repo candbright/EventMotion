@@ -1,20 +1,28 @@
 package com.example.app.base.activity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewbinding.ViewBinding;
+
+import com.example.app.databinding.ActivityMainBinding;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
 
 /**
  * created by wyh in 2021/11/15
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<BindingView extends ViewBinding> extends BaseToolActivity {
     private ActivityLifecycleListener mLifecycleListener;
+    protected BindingView viewBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutResourceID());
+        initViewBinding();
         onCreateViewModule();
         newExternalRelations(); // new ExternalRelations(this) and  setLifecycleListener(), create modules, and set listeners for modules.
         if (mLifecycleListener != null) {
@@ -22,7 +30,17 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    protected abstract int getLayoutResourceID();
+    protected void initViewBinding() {
+        ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
+        Class cls = (Class) type.getActualTypeArguments()[0];
+        try {
+            Method inflate = cls.getDeclaredMethod("inflate", LayoutInflater.class);
+            viewBinding = (BindingView) inflate.invoke(null, getLayoutInflater());
+            setContentView(viewBinding.getRoot());
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
 
     //创建模块之前
     protected abstract void onCreateViewModule();

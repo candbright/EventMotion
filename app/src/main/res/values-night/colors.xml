@@ -7,4 +7,6 @@
     <color name="color_text_edit">#E1E1E1</color>
     <color name="color_text_hint">#999999</color>
     <color name="color_text_card">#E1E1E1</color>
+
+    <color name="color_divider_line">#EEEEEE</color>
 </resources>

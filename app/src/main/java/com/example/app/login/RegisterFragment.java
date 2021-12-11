@@ -5,28 +5,16 @@ import android.graphics.Typeface;
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.widget.AppCompatButton;
-
-import com.example.app.R;
 import com.example.app.base.fragment.BaseFragment;
+import com.example.app.databinding.FragmentRegisterBinding;
 
 /**
  * <p>created by wyh in 2021/10/26</p>
  */
-public class RegisterFragment extends BaseFragment<RegisterFragmentRelations> {
+public class RegisterFragment extends BaseFragment<RegisterFragmentRelations, FragmentRegisterBinding> {
     private static final String TAG = "RegisterFragment";
-    private EditText usernameEdit;
-    private EditText passwordEdit;
-    private EditText passwordConfirmEdit;
-    private AppCompatButton saveButton;
-
-    @Override
-    protected int getLayoutResourceID() {
-        return R.layout.fragment_register;
-    }
 
     @Override
     protected void onCreateViewModule() {
@@ -38,18 +26,15 @@ public class RegisterFragment extends BaseFragment<RegisterFragmentRelations> {
         if (rootView == null) {
             return;
         }
-        usernameEdit = rootView.findViewById(R.id.et_frag_reg_username);
-        usernameEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
-        passwordEdit = rootView.findViewById(R.id.et_frag_reg_password);
-        passwordEdit.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
-        passwordEdit.setTypeface(Typeface.DEFAULT);
-        passwordEdit.setTransformationMethod(new PasswordTransformationMethod());
-        passwordEdit.setOnEditorActionListener((v, actionId, event) -> false);
-        passwordConfirmEdit = rootView.findViewById(R.id.et_frag_confirm_password);
-        passwordConfirmEdit.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
-        passwordConfirmEdit.setTypeface(Typeface.DEFAULT);
-        passwordConfirmEdit.setTransformationMethod(new PasswordTransformationMethod());
-        saveButton = rootView.findViewById(R.id.btn_frag_reg);
+
+        viewBinding.usernameEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+        viewBinding.passwordEdit.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
+        viewBinding.passwordEdit.setTypeface(Typeface.DEFAULT);
+        viewBinding.passwordEdit.setTransformationMethod(new PasswordTransformationMethod());
+        viewBinding.passwordEdit.setOnEditorActionListener((v, actionId, event) -> false);
+        viewBinding.passwordConfirmEdit.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
+        viewBinding.passwordConfirmEdit.setTypeface(Typeface.DEFAULT);
+        viewBinding.passwordConfirmEdit.setTransformationMethod(new PasswordTransformationMethod());
     }
 
     @Override
@@ -58,10 +43,10 @@ public class RegisterFragment extends BaseFragment<RegisterFragmentRelations> {
     }
 
     public void setSaveListener(View.OnClickListener onClickListener) {
-        saveButton.setOnClickListener(onClickListener);
+        viewBinding.saveButton.setOnClickListener(onClickListener);
     }
 
     public void setPasswordEditAction(TextView.OnEditorActionListener actionListener) {
-        passwordConfirmEdit.setOnEditorActionListener(actionListener);
+        viewBinding.passwordConfirmEdit.setOnEditorActionListener(actionListener);
     }
 }

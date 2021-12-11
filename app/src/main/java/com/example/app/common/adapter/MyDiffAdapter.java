@@ -5,9 +5,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 
 import com.example.app.base.adapter.BaseDiffAdapter;
-import com.example.app.common.listener.OnItemEventListener;
 import com.example.app.base.adapter.BaseViewHolder;
 import com.example.app.base.adapter.SortedItem;
+import com.example.app.common.listener.OnItemEventListener;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public class MyDiffAdapter extends BaseDiffAdapter {
     public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         SortedItem sortedItem = null;
         for (int i = 0; i < datas.size(); i++) {
-            if (datas.get(i).layoutID() == viewType) {
+            if (datas.get(i).getClass().hashCode() == viewType) {
                 sortedItem = datas.get(i);
                 break;
             }
@@ -51,7 +51,7 @@ public class MyDiffAdapter extends BaseDiffAdapter {
             return null;
         }
 
-        return (BaseViewHolder) sortedItem.obtainViewHolder(parent, false);
+        return sortedItem.bindViewHolder(parent);
     }
 
     @Override

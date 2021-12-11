@@ -29,10 +29,4 @@ public abstract class BaseToolFragment extends Fragment {
             Toast.makeText(getContext(), text, Toast.LENGTH_LONG).show();
         }
     }
-
-    protected abstract int getLayoutResourceID();
-
-    protected abstract void onCreateViewModule();
-
-    protected abstract BaseFragmentExternalRelations newExternalRelations();
 }

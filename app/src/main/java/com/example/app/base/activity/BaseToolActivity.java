@@ -2,13 +2,16 @@ package com.example.app.base.activity;
 
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewbinding.ViewBinding;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 /**
  * created by wyh in 2021/11/16
  */
-public abstract class BaseExitActivity extends BaseActivity {
+public abstract class BaseToolActivity extends AppCompatActivity {
 
     private Toast exitToast;
 

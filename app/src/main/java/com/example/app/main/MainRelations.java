@@ -9,7 +9,7 @@ import android.content.Intent;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app.base.activity.BaseExternalRelations;
-import com.example.app.login.LoginActivity;
+import com.example.app.login.RegisterFragment;
 import com.example.app.manager.DayNightManager;
 
 /**
@@ -26,7 +26,7 @@ public class MainRelations extends BaseExternalRelations<MainActivity> {
         activity.setOnItemEventListener((tag, switchValue, data) -> {
             switch (Integer.valueOf(tag)) {
                 case INDEX_GO_ACTIVITY_REGISTER:
-                    Intent registerIntent = new Intent(activity, LoginActivity.class);
+                    Intent registerIntent = new Intent(activity, RegisterFragment.class);
                     activity.startActivity(registerIntent);
                     break;
                 case INDEX_LIGHT_MODE_NIGHT:
