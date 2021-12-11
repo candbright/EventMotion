@@ -15,7 +15,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/item_card_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_120"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/dp_15"
+        android:paddingHorizontal="@dimen/dp_15"
         android:orientation="vertical">
         <!-- 512*384 -> 256*192 -> 128*96 -->
         <ImageView
@@ -24,8 +26,7 @@
             app:layout_constraintTop_toTopOf="@+id/item_card_container"
             app:layout_constraintBottom_toBottomOf="@+id/item_card_container"
             android:layout_width="128dp"
-            android:layout_height="@dimen/dp_96"
-            android:src="@drawable/image_go" />
+            android:layout_height="@dimen/dp_96" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

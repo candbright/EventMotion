@@ -16,6 +16,6 @@ public class ImageCardHolder extends BaseViewHolder<ImageCardItem, ItemCardImage
 
     @Override
     public void bindViewData(ImageCardItem data) {
-
+        viewBinding.itemCardImage.setImageResource(data.getImageSource());
     }
 }

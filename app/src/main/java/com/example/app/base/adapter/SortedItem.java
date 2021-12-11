@@ -24,7 +24,9 @@ public abstract class SortedItem<Holder extends BaseViewHolder, BindingView exte
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
-        return createViewHolder(viewBinding);
+        Holder viewHolder = createViewHolder(viewBinding);
+        viewHolder.viewBinding = viewBinding;
+        return viewHolder;
     }
 
     protected abstract Holder createViewHolder(BindingView viewBinding);

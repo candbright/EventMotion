@@ -41,11 +41,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
     private void initData() {
         mData = new ArrayList<>();
-        mData.add(new ImageCardItem());
-        mData.add(new ImageCardItem());
-        mData.add(new ImageCardItem());
-        mData.add(new ImageCardItem());
-        mData.add(new ImageCardItem());
+        mData.add(new ImageCardItem().setImageSource(R.mipmap.baby));
+        mData.add(new ImageCardItem().setImageSource(R.mipmap.breakdown));
+        mData.add(new ImageCardItem().setImageSource(R.mipmap.butterfly));
+        mData.add(new ImageCardItem().setImageSource(R.mipmap.americaidiot));
+        mData.add(new ImageCardItem().setImageSource(R.mipmap.carnon));
         sortedAdapter = new MyDiffAdapter(mData);
         viewBinding.rvDataList.setAdapter(sortedAdapter);
         viewBinding.rvDataList.setLayoutManager(new LinearLayoutManager(this));
