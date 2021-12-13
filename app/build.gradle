@@ -1,6 +1,5 @@
-plugins {
-    id 'com.android.application'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdk 29
@@ -31,7 +30,16 @@ android {
     buildFeatures {
         viewBinding = true
     }
-
+    greendao {
+        schemaVersion 5 //数据库版本号
+        daoPackage 'com.example.app.dao'
+        // 设置DaoMaster、DaoSession、Dao 包名
+        targetGenDir 'src/main/java'
+//设置DaoMaster、DaoSession、Dao目录,请注意，这里路径用/不要用.
+        generateTests false //设置为true以自动生成单元测试。
+        targetGenDirTests 'src/main/java/com/example/app/dao/test'
+        //应存储生成的单元测试的基本目录。默认为 src / androidTest / java。
+    }
 }
 
 dependencies {
@@ -46,4 +54,5 @@ dependencies {
     def nav_version = "2.1.0"
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
+    implementation 'org.greenrobot:greendao:3.3.0'
 }

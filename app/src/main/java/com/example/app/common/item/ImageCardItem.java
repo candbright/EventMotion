@@ -10,8 +10,12 @@ import com.example.app.databinding.ItemCardImageBinding;
 public class ImageCardItem extends SortedItem<ImageCardHolder, ItemCardImageBinding> {
     //歌曲封面路径
     private int imageSource;
-
-
+    //歌曲名称
+    private String songName;
+    //歌曲难度
+    private int difficulty;
+    //歌曲描述
+    private String description;
     public int getImageSource() {
         return imageSource;
     }

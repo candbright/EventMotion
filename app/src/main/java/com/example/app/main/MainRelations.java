@@ -40,11 +40,5 @@ public class MainRelations extends BaseExternalRelations<MainActivity> {
             }
 
         });
-        activity.setRlL(new RecyclerView.OnFlingListener() {
-            @Override
-            public boolean onFling(int velocityX, int velocityY) {
-                return false;
-            }
-        });
     }
 }
