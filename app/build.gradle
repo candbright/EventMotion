@@ -3,19 +3,19 @@ plugins {
 }
 
 android {
-    compileSdk 30
-    compileSdkVersion 30
+    compileSdk 29
+    compileSdkVersion 29
     buildToolsVersion '29.0.2'
     defaultConfig {
-        applicationId "com.example.itemtestdemo"
-        minSdk 29
-        targetSdk 30
+        applicationId "com.example.app"
+        minSdk 26
+        targetSdk 29
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        targetSdkVersion 30
-        minSdkVersion 28
+        targetSdkVersion 29
+        minSdkVersion 26
     }
 
     buildTypes {
