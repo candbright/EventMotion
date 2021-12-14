@@ -17,11 +17,10 @@ import java.lang.reflect.ParameterizedType;
 /**
  * <p>created by wyh in 2021/12/10</p>
  */
-public abstract class BaseConstraintLayout<BindingView extends ViewBinding> extends ConstraintLayout {
+public abstract class BaseConstraintLayout extends ConstraintLayout {
 
     protected Context mContext;
     protected LayoutInflater mLayoutInflater;
-    protected BindingView viewBinding;
 
     public BaseConstraintLayout(@NonNull Context context) {
         this(context, null);
@@ -44,13 +43,5 @@ public abstract class BaseConstraintLayout<BindingView extends ViewBinding> exte
     private void initLayoutInflater(Context context) {
         mContext = context;
         mLayoutInflater = LayoutInflater.from(mContext);
-        ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
-        Class cls = (Class) type.getActualTypeArguments()[0];
-        try {
-            Method inflate = cls.getDeclaredMethod("inflate", LayoutInflater.class);
-            viewBinding = (BindingView) inflate.invoke(null, mLayoutInflater);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
     }
 }

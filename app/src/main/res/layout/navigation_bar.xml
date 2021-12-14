@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_main"
+        android:id="@+id/container_top"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/color_background_normal">
 
         <ImageView
             android:id="@+id/menu_button"
@@ -13,8 +14,8 @@
             android:layout_height="@dimen/dp_50"
             android:padding="@dimen/dp_12"
             android:src="@drawable/main_menu"
-            app:layout_constraintLeft_toLeftOf="@+id/container_main"
-            app:layout_constraintTop_toTopOf="@+id/container_main" />
+            app:layout_constraintLeft_toLeftOf="@+id/container_top"
+            app:layout_constraintTop_toTopOf="@+id/container_top" />
 
         <TextView
             android:id="@+id/title_tv"
@@ -28,24 +29,24 @@
             app:layout_constraintBottom_toBottomOf="@+id/menu_button"
             app:layout_constraintLeft_toRightOf="@+id/menu_button"
             app:layout_constraintRight_toLeftOf="@+id/search_tv"
-            app:layout_constraintTop_toTopOf="@+id/container_main" />
+            app:layout_constraintTop_toTopOf="@+id/container_top" />
 
         <ImageView
             android:id="@+id/search_tv"
-            android:src="@drawable/main_search"
             android:layout_width="@dimen/dp_50"
             android:layout_height="@dimen/dp_50"
             android:padding="@dimen/dp_12"
-            app:layout_constraintRight_toRightOf="@+id/container_main"
-            app:layout_constraintTop_toTopOf="@+id/container_main" />
+            android:src="@drawable/main_search"
+            app:layout_constraintRight_toRightOf="@+id/container_top"
+            app:layout_constraintTop_toTopOf="@+id/container_top" />
 
         <View
             android:id="@+id/divider_line"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_1"
             android:background="@color/color_divider_line"
-            app:layout_constraintLeft_toLeftOf="@+id/container_main"
-            app:layout_constraintRight_toRightOf="@+id/container_main"
+            app:layout_constraintLeft_toLeftOf="@+id/container_top"
+            app:layout_constraintRight_toRightOf="@+id/container_top"
             app:layout_constraintTop_toBottomOf="@+id/title_tv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

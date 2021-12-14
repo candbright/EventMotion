@@ -25,6 +25,32 @@ public class ImageCardItem extends SortedItem<ImageCardHolder, ItemCardImageBind
         return this;
     }
 
+    public String getSongName() {
+        return songName;
+    }
+
+    public ImageCardItem setSongName(String songName) {
+        this.songName = songName;
+        return this;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public ImageCardItem setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public ImageCardItem setDescription(String description) {
+        this.description = description;
+        return this;
+    }
 
     @Override
     protected ImageCardHolder createViewHolder(ItemCardImageBinding viewBinding) {

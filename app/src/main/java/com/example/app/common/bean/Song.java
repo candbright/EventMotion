@@ -11,6 +11,7 @@ import org.greenrobot.greendao.annotation.Keep;
 import org.greenrobot.greendao.annotation.ToMany;
 
 import java.util.List;
+import com.example.app.dao.SongCommentDao;
 
 /**
  * <p>created by wyh in 2021/12/13</p>

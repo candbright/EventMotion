@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".main.MainActivity"
-    android:background="@color/color_background_normal">
+    android:background="@color/color_background_normal"
+    tools:context=".main.MainActivity">
 
-    <include
-        layout="@layout/navigation_bar"/>
+    <LinearLayout
+        android:id="@+id/navigation_top"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/navigation_bar" />
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_data_list"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
         android:background="@color/color_background_card"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        app:layout_constraintBottom_toTopOf="@+id/navigation_bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navigation_top" />
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/navigation_bottom"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <include layout="@layout/navigation_bottom_bar" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

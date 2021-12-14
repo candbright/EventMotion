@@ -1,12 +1,10 @@
 package com.example.app.main;
 
+import static com.example.app.main.MainActivity.INDEX_GO_ACTIVITY_REGISTER;
 import static com.example.app.main.MainActivity.INDEX_LIGHT_MODE_DAY;
 import static com.example.app.main.MainActivity.INDEX_LIGHT_MODE_NIGHT;
-import static com.example.app.main.MainActivity.INDEX_GO_ACTIVITY_REGISTER;
 
 import android.content.Intent;
-
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app.base.activity.BaseExternalRelations;
 import com.example.app.login.RegisterFragment;
@@ -38,6 +36,18 @@ public class MainRelations extends BaseExternalRelations<MainActivity> {
                 default:
                     break;
             }
+
+        });
+        activity.setMusicButtonClickListener(v -> {
+
+        });
+        activity.setSquareButtonClickListener(v -> {
+
+        });
+        activity.setTeachButtonClickListener(v -> {
+
+        });
+        activity.setCollectButtonClickListener(v -> {
 
         });
     }

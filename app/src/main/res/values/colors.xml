@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="common_blue">#009DE1</color>
+    <color name="common_blue">#FF009DE1</color>
+    <color name="common_gray">#999999</color>
 
     <color name="color_background_card">#EAEAEA</color>
     <color name="color_background_normal">#F7F8F9</color>
@@ -10,6 +11,7 @@
     <color name="color_text_edit">#333333</color>
     <color name="color_text_hint">#777777</color>
     <color name="color_text_card">#333333</color>
+    <color name="color_text_bottom_bar">#333333</color>
 
     <color name="color_divider_line">#CCCCCC</color>
 
