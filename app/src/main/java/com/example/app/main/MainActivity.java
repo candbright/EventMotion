@@ -1,5 +1,6 @@
 package com.example.app.main;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 
@@ -23,37 +24,34 @@ import com.example.app.util.Utility;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * <p>created by wyh in 2021/11/15</p>
  */
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
     private static final String TAG = "<MainActivity>";
-    public static final int INDEX_GO_ACTIVITY_REGISTER = 0;
-    public static final int INDEX_LIGHT_MODE_NIGHT = 1;
-    public static final int INDEX_LIGHT_MODE_DAY = 2;
 
-    private NavigationBarBinding navigationBarTop;
-    private NavigationBottomBarBinding navigationBarBottom;
+    NavigationBarBinding navigationBarTop;
+    NavigationBottomBarBinding navigationBarBottom;
     private MyDiffAdapter sortedAdapter;
     private List<SortedItem> mData;
-    private int navigatorId;
+    int navigatorId;
 
     @Override
     protected void onCreateViewModule() {
-        initNavigatorTop();
+        initBinding();
         initNavigatorBottom();
+        initSlideMenu();
         initData();
     }
 
-
-    private void initNavigatorTop() {
-        navigationBarTop = NavigationBarBinding.bind(viewBinding.getRoot());
-        navigationBarTop.titleTv.setText(R.string.navigation_title_choose_mode);
+    private void initBinding() {
+        navigationBarTop = NavigationBarBinding.bind(rootView.getRoot());
+        navigationBarBottom = NavigationBottomBarBinding.bind(rootView.getRoot());
     }
 
     private void initNavigatorBottom() {
-        navigationBarBottom = NavigationBottomBarBinding.bind(viewBinding.getRoot());
         navigationBarBottom.musicImage.setImageResource(R.drawable.navigation_star_songs);
         navigationBarBottom.musicTv.setText(R.string.navigation_bottom_songs);
         navigationBarBottom.squareImage.setImageResource(R.drawable.navigation_star_square);
@@ -62,13 +60,21 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         navigationBarBottom.teachTv.setText(R.string.navigation_bottom_teach);
         navigationBarBottom.collectImage.setImageResource(R.drawable.navigation_star_collect);
         navigationBarBottom.collectTv.setText(R.string.navigation_bottom_collect);
-        navigationBarBottom.goCameraView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        navigationBarBottom.goCameraView.setOnClickListener(v -> {
 
-            }
         });
         matchBottomTv();
+    }
+
+
+    private void initSlideMenu() {
+        rootView.drawerLayout.setScrimColor(Color.TRANSPARENT);
+        rootView.leftDrawer.setOnClickListener(v -> rootView.drawerLayout.closeDrawers());
+        createMenuList();
+    }
+
+    private void createMenuList() {
+
     }
 
     private void initData() {
@@ -81,12 +87,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             mData.add(new ImageCardItem().setImageSource(song.getImageSrc())
                     .setSongName(song.getSongName())
                     .setDifficulty(song.getDifficulty())
-                    .setDescription(song.getDescription()));
+                    .setDescription(song.getDescription()).setSortedIndex(song.getId()));
         }
         sortedAdapter = new MyDiffAdapter(mData);
-        viewBinding.rvDataList.setAdapter(sortedAdapter);
-        viewBinding.rvDataList.setLayoutManager(new LinearLayoutManager(this));
-        viewBinding.rvDataList.addItemDecoration(new MyItemDecor(MyItemDecor.TYPE_VERTICAL,
+        rootView.rvDataList.setAdapter(sortedAdapter);
+        rootView.rvDataList.setLayoutManager(new LinearLayoutManager(this));
+        rootView.rvDataList.addItemDecoration(new MyItemDecor(MyItemDecor.TYPE_VERTICAL,
                 (int) Utility.dip2px(10),
                 (int) Utility.dip2px(10),
                 (int) Utility.dip2px(10)));

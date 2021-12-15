@@ -29,7 +29,7 @@ public class SongDao extends AbstractDao<Song, Long> {
         public final static Property SongMode = new Property(2, String.class, "songMode", false, "SONG_MODE");
         public final static Property Difficulty = new Property(3, int.class, "difficulty", false, "DIFFICULTY");
         public final static Property Title = new Property(4, String.class, "title", false, "TITLE");
-        public final static Property ImageSrc = new Property(5, int.class, "imageSrc", false, "IMAGE_SRC");
+        public final static Property ImageSrc = new Property(5, String.class, "imageSrc", false, "IMAGE_SRC");
         public final static Property UrlPath = new Property(6, String.class, "urlPath", false, "URL_PATH");
         public final static Property Description = new Property(7, String.class, "description", false, "DESCRIPTION");
     }
@@ -55,7 +55,7 @@ public class SongDao extends AbstractDao<Song, Long> {
                 "\"SONG_MODE\" TEXT," + // 2: songMode
                 "\"DIFFICULTY\" INTEGER NOT NULL ," + // 3: difficulty
                 "\"TITLE\" TEXT," + // 4: title
-                "\"IMAGE_SRC\" INTEGER NOT NULL ," + // 5: imageSrc
+                "\"IMAGE_SRC\" TEXT," + // 5: imageSrc
                 "\"URL_PATH\" TEXT," + // 6: urlPath
                 "\"DESCRIPTION\" TEXT);"); // 7: description
     }
@@ -90,7 +90,11 @@ public class SongDao extends AbstractDao<Song, Long> {
         if (title != null) {
             stmt.bindString(5, title);
         }
-        stmt.bindLong(6, entity.getImageSrc());
+ 
+        String imageSrc = entity.getImageSrc();
+        if (imageSrc != null) {
+            stmt.bindString(6, imageSrc);
+        }
  
         String urlPath = entity.getUrlPath();
         if (urlPath != null) {
@@ -127,7 +131,11 @@ public class SongDao extends AbstractDao<Song, Long> {
         if (title != null) {
             stmt.bindString(5, title);
         }
-        stmt.bindLong(6, entity.getImageSrc());
+ 
+        String imageSrc = entity.getImageSrc();
+        if (imageSrc != null) {
+            stmt.bindString(6, imageSrc);
+        }
  
         String urlPath = entity.getUrlPath();
         if (urlPath != null) {
@@ -159,7 +167,7 @@ public class SongDao extends AbstractDao<Song, Long> {
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // songMode
             cursor.getInt(offset + 3), // difficulty
             cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // title
-            cursor.getInt(offset + 5), // imageSrc
+            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // imageSrc
             cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // urlPath
             cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7) // description
         );
@@ -173,7 +181,7 @@ public class SongDao extends AbstractDao<Song, Long> {
         entity.setSongMode(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setDifficulty(cursor.getInt(offset + 3));
         entity.setTitle(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
-        entity.setImageSrc(cursor.getInt(offset + 5));
+        entity.setImageSrc(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
         entity.setUrlPath(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
         entity.setDescription(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
      }

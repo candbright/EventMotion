@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.viewbinding.ViewBinding;
 
-import com.example.app.databinding.ActivityMainBinding;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -17,7 +15,7 @@ import java.lang.reflect.ParameterizedType;
  */
 public abstract class BaseActivity<BindingView extends ViewBinding> extends BaseToolActivity {
     private ActivityLifecycleListener mLifecycleListener;
-    protected BindingView viewBinding;
+    protected BindingView rootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +33,8 @@ public abstract class BaseActivity<BindingView extends ViewBinding> extends Base
         Class cls = (Class) type.getActualTypeArguments()[0];
         try {
             Method inflate = cls.getDeclaredMethod("inflate", LayoutInflater.class);
-            viewBinding = (BindingView) inflate.invoke(null, getLayoutInflater());
-            setContentView(viewBinding.getRoot());
+            rootView = (BindingView) inflate.invoke(null, getLayoutInflater());
+            setContentView(rootView.getRoot());
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }

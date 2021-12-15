@@ -2,12 +2,18 @@ package com.example.app.global;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.util.Log;
 
 import com.example.app.R;
 import com.example.app.common.bean.Song;
 import com.example.app.dao.SongDaoHelper;
+import com.example.app.util.IOUtil;
+import com.example.app.util.Utility;
+
+import java.lang.reflect.Field;
+import java.util.List;
 
 /**
  * <p>created by wyh in 2021/12/10</p>
@@ -34,13 +40,26 @@ public class GlobalApp extends Application {
     private void initDao() {
         SongDaoHelper songDaoHelper = SongDaoHelper.getInstance(this);
         songDaoHelper.deleteAll();
-        Song baby = new Song().setSongName("baby").setSongMode(Song.MODE_RACE_INSANE).setDifficulty(4)
-                .setImageSrc(R.mipmap.baby).setUrlPath("").setDescription(getResString(R.string.song_description_baby));
-        songDaoHelper.insertOrReplace(baby);
-        Song breakdown = new Song().setSongName("breakdown").setSongMode(Song.MODE_RACE_INSANE).setDifficulty(11)
-                .setImageSrc(R.mipmap.breakdown).setUrlPath("").setDescription(getResString(R.string.song_description_breakdown));
-        songDaoHelper.insertOrReplace(breakdown);
+        List<Song> songs = songDaoHelper.searchAll();
+        if (songs.size() == 0) {
+            addSongs(songDaoHelper);
+        }
     }
+
+    private void addSongs(SongDaoHelper songDaoHelper) {
+        String jsonStr = Utility.getJson(this, "songs.json");
+        List<Song> songs = Utility.jsonToBean(jsonStr, Song.class);
+        for (Song song : songs) {
+            songDaoHelper.insertOrReplace(new Song().setSongName(song.getSongName())
+                    .setSongMode(song.getSongMode())
+                    .setDifficulty(song.getDifficulty())
+                    .setImageSrc(song.getImageSrc())
+                    .setUrlPath(song.getUrlPath())
+                    .setDescription(song.getDescription()));
+        }
+    }
+
+
 
     public static String getResString(int resId) {
         String string = "";

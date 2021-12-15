@@ -14,29 +14,30 @@
             android:layout_height="@dimen/dp_50"
             android:padding="@dimen/dp_12"
             android:src="@drawable/main_menu"
+            app:layout_constraintBottom_toBottomOf="@+id/container_top"
             app:layout_constraintLeft_toLeftOf="@+id/container_top"
             app:layout_constraintTop_toTopOf="@+id/container_top" />
 
         <TextView
             android:id="@+id/title_tv"
             android:layout_width="@dimen/dp_0"
-            android:layout_height="@dimen/dp_0"
+            android:layout_height="@dimen/dp_50"
             android:gravity="center"
             android:includeFontPadding="false"
             android:text="TITLE"
             android:textColor="#000000"
             android:textSize="@dimen/sp_14"
-            app:layout_constraintBottom_toBottomOf="@+id/menu_button"
             app:layout_constraintLeft_toRightOf="@+id/menu_button"
-            app:layout_constraintRight_toLeftOf="@+id/search_tv"
+            app:layout_constraintRight_toLeftOf="@+id/search_button"
             app:layout_constraintTop_toTopOf="@+id/container_top" />
 
         <ImageView
-            android:id="@+id/search_tv"
+            android:id="@+id/search_button"
             android:layout_width="@dimen/dp_50"
             android:layout_height="@dimen/dp_50"
             android:padding="@dimen/dp_12"
             android:src="@drawable/main_search"
+            app:layout_constraintBottom_toBottomOf="@+id/container_top"
             app:layout_constraintRight_toRightOf="@+id/container_top"
             app:layout_constraintTop_toTopOf="@+id/container_top" />
 

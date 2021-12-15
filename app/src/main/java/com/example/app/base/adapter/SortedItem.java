@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 
 public abstract class SortedItem<Holder extends BaseViewHolder, BindingView extends ViewBinding> implements Cloneable {
-    private int sortedIndex;
+    private long sortedIndex;
 
     public Holder bindViewHolder(ViewGroup parent) {
         ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
@@ -31,11 +31,11 @@ public abstract class SortedItem<Holder extends BaseViewHolder, BindingView exte
 
     protected abstract Holder createViewHolder(BindingView viewBinding);
 
-    public int getSortedIndex() {
+    public long getSortedIndex() {
         return sortedIndex;
     }
 
-    public SortedItem setSortedIndex(int index) {
+    public SortedItem setSortedIndex(long index) {
         this.sortedIndex = index;
         return this;
     }

@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -22,15 +23,16 @@ import java.util.ArrayList;
  */
 public class WaveConstraintLayout extends BaseConstraintLayout {
 
+    private static final String TAG = WaveConstraintLayout.class.getSimpleName();
     private float circleCenterX;
     private float circleCenterY;
     private float rawRadius;
     private float drewRadius = 0;
-    private float drawingRadiusDegrees = 5;
+    private float drawingRadiusDegrees = 20;
     private View mTargetTouchView;
     private RectF targetTouchRectF;
     private float[] mDownPosition;
-    private static final int INVALID_DURATION = 1000;
+    private static final int INVALID_DURATION = 10;
     private postUpEventDelayed delayedRunnable = new postUpEventDelayed();
 
     public WaveConstraintLayout(@NonNull Context context) {
@@ -57,19 +59,20 @@ public class WaveConstraintLayout extends BaseConstraintLayout {
          */
         if (mTargetTouchView != null) {
             canvas.save();
-            // 为了不让绘制的圆环超出所要绘制的范围
+            
             if (drewRadius < rawRadius) {
                 drewRadius += rawRadius / drawingRadiusDegrees;
+                // 为了不让绘制的圆环超出所要绘制的范围
                 Paint mHalfTransPaint = new Paint();
                 mHalfTransPaint.setAntiAlias(true);
-                mHalfTransPaint.setColor(GlobalApp.getInstance().getApplicationContext().getResources().getColor(R.color.common_blue, null));
-                canvas.drawCircle(mDownPosition[0], mDownPosition[1], drewRadius, mHalfTransPaint);
+                mHalfTransPaint.setColor(GlobalApp.getInstance().getApplicationContext().getResources().getColor(R.color.common_gray_AA, null));
+                canvas.drawCircle(circleCenterX, circleCenterY, drewRadius, mHalfTransPaint);
                 postInvalidateDelayed(INVALID_DURATION);
             } else {
                 Paint mTransPaint = new Paint();
                 mTransPaint.setAntiAlias(true);
-                mTransPaint.setColor(GlobalApp.getInstance().getResources().getColor(R.color.common_blue, null));
-                canvas.drawCircle(mDownPosition[0], mDownPosition[1], rawRadius, mTransPaint);
+                mTransPaint.setColor(GlobalApp.getInstance().getResources().getColor(R.color.common_gray_AA, null));
+                canvas.drawCircle(circleCenterX, circleCenterY, rawRadius, mTransPaint);
                 post(delayedRunnable);
                 drewRadius = 0;
             }
@@ -81,15 +84,15 @@ public class WaveConstraintLayout extends BaseConstraintLayout {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "getRawX: " + ev.getRawX());
+                Log.d(TAG, "getRawY: " + ev.getRawY());
                 mTargetTouchView = findTargetView(ev.getRawX(), ev.getRawY(), this);
                 if (mTargetTouchView != null) {
                     mDownPosition = getCircleCenterPosition(ev.getRawX(), ev.getRawY());
-                    circleCenterX = mDownPosition[0];
-                    circleCenterY = mDownPosition[1];
-                    float left = circleCenterX - targetTouchRectF.left;
-                    float right = targetTouchRectF.right - circleCenterX;
-                    float top = circleCenterY - targetTouchRectF.top;
-                    float bottom = targetTouchRectF.bottom - circleCenterY;
+                    float left = mDownPosition[0] - targetTouchRectF.left;
+                    float right = targetTouchRectF.right - mDownPosition[0];
+                    float top = mDownPosition[1] - targetTouchRectF.top;
+                    float bottom = targetTouchRectF.bottom - mDownPosition[1];
                     // 计算出最大的值则为半径
                     rawRadius = Math.max(bottom, Math.max(Math.max(left, right), top));
                 }
@@ -106,6 +109,7 @@ public class WaveConstraintLayout extends BaseConstraintLayout {
         View targetView = null;
         for (View child : touchableView) {
             targetTouchRectF = getViewRectF(child);
+            Log.d(TAG, targetTouchRectF.toString());
             if (targetTouchRectF.contains(x, y) && child.isClickable()) {
                 // 这说明被点击的view找到了
                 targetView = child;
@@ -130,7 +134,9 @@ public class WaveConstraintLayout extends BaseConstraintLayout {
         float[] mDownPosition = new float[2];
         getLocationOnScreen(location);
         mDownPosition[0] = x;
-        mDownPosition[1] = y -location[1];
+        mDownPosition[1] = y;
+        circleCenterX = x;
+        circleCenterY = y - location[1];
         return mDownPosition;
     }
 

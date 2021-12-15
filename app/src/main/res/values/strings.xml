@@ -3,6 +3,7 @@
     <string name="app_name">E舞</string>
     <string name="common_refresh">刷新</string>
     <string name="fragment_register_title">注册</string>
+    <string name="navigation_title_all_song">所有歌曲</string>
     <string name="navigation_title_choose_mode">模式选择</string>
     <string name="navigation_title_fancy">花式模式</string>
     <string name="navigation_title_speed">竞速模式</string>
@@ -16,6 +17,4 @@
     <string name="item_card_song_difficulty">难度: %d</string>
     <string name="item_card_song_description">简介: %s</string>
 
-    <string name="song_description_baby">老歌，歌谱包含转身，实际星级5~6星。</string>
-    <string name="song_description_breakdown">老歌，对角线谱子较多，在11星属于较难水平。</string>
 </resources>

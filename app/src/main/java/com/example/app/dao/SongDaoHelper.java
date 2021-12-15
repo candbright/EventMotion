@@ -17,15 +17,15 @@ public class SongDaoHelper {
     private static SongDaoHelper mSongDaoHelper;
 
     private SongDaoHelper(Context context) {
-        mDevOpenHelper = new DaoMaster.DevOpenHelper(context.getApplicationContext(), "SONG.db",null);
+        mDevOpenHelper = new DaoMaster.DevOpenHelper(context.getApplicationContext(), "SONG.db", null);
         mDaoMaster = new DaoMaster(mDevOpenHelper.getWritableDb());
         mDaoSession = mDaoMaster.newSession();
         mSongDao = mDaoSession.getSongDao();
     }
 
-    public static SongDaoHelper getInstance(Context context){
-        if (mSongDaoHelper == null){
-            synchronized (SongDaoHelper.class){
+    public static SongDaoHelper getInstance(Context context) {
+        if (mSongDaoHelper == null) {
+            synchronized (SongDaoHelper.class) {
                 if (mSongDaoHelper == null) {
                     mSongDaoHelper = new SongDaoHelper(context);
                 }
@@ -33,7 +33,6 @@ public class SongDaoHelper {
         }
         return mSongDaoHelper;
     }
-
 
 
     /**
@@ -50,14 +49,14 @@ public class SongDaoHelper {
     /**
      * delete
      */
-    public void delete(String name){
+    public void delete(String name) {
         mSongDao.queryBuilder().where(SongDao.Properties.SongName.eq(name)).buildDelete().executeDeleteWithoutDetachingEntities();
     }
 
     /**
      * delete all
      */
-    public void deleteAll(){
+    public void deleteAll() {
         mDaoSession.deleteAll(Song.class);
     }
 
@@ -65,9 +64,9 @@ public class SongDaoHelper {
      * update
      */
 
-    public void update(Song song){
+    public void update(Song song) {
         Song old = mSongDao.queryBuilder().where(SongDao.Properties.Id.eq(song.getId())).build().unique();
-        if(old!=null){
+        if (old != null) {
             old.setSongName("iris");
             mSongDao.update(old);
         }
@@ -76,12 +75,17 @@ public class SongDaoHelper {
     /**
      * query
      */
-    public List<Song> searchByWhere(String name){
-        List<Song> songs = (List<Song>) mSongDao.queryBuilder().where(SongDao.Properties.SongName.eq(name)).build().unique();
+    public List<Song> searchByName(String songName) {
+        List<Song> songs = (List<Song>) mSongDao.queryBuilder().where(SongDao.Properties.SongName.eq(songName)).build().unique();
         return songs;
     }
 
-    public List<Song> searchAll(){
+    public List<Song> searchById(String id) {
+        List<Song> songs = (List<Song>) mSongDao.queryBuilder().where(SongDao.Properties.Id.eq(id)).build().unique();
+        return songs;
+    }
+
+    public List<Song> searchAll() {
         List<Song> songs = mSongDao.queryBuilder().list();
         return songs;
     }

@@ -18,16 +18,16 @@ import com.example.app.dao.SongCommentDao;
  */
 @Entity
 public class Song {
-    public static final String MODE_FANCY_LEARN = "";       //花式学习
-    public static final String MODE_FANCY_PERFORM = "";     //花式表演
-    public static final String MODE_FANCY_INSANE = "";      //花式疯狂
-    public static final String MODE_FANCY_DOUBLE = "";      //花式双踏板
-    public static final String MODE_FANCY_LOVERS = "";      //花式情侣
-    public static final String MODE_FANCY_REMIX = "";       //花式混音
-    public static final String MODE_RACE_INSANE = "";       //竞速疯狂
-    public static final String MODE_RACE_DOUBLE = "";       //竞速双踏板
-    public static final String MODE_RACE_LOVERS = "";       //竞速情侣
-    public static final String MODE_RACE_REMIX = "";        //竞速疯狂
+    public static final String MODE_FANCY_LEARN = "MODE_FANCY_LEARN";       //花式学习
+    public static final String MODE_FANCY_PERFORM = "MODE_FANCY_PERFORM";     //花式表演
+    public static final String MODE_FANCY_INSANE = "MODE_FANCY_INSANE";      //花式疯狂
+    public static final String MODE_FANCY_DOUBLE = "MODE_FANCY_DOUBLE";      //花式双踏板
+    public static final String MODE_FANCY_LOVERS = "MODE_FANCY_LOVERS";      //花式情侣
+    public static final String MODE_FANCY_REMIX = "MODE_FANCY_REMIX";       //花式混音
+    public static final String MODE_RACE_INSANE = "MODE_RACE_INSANE";       //竞速疯狂
+    public static final String MODE_RACE_DOUBLE = "MODE_RACE_DOUBLE";       //竞速双踏板
+    public static final String MODE_RACE_LOVERS = "MODE_RACE_LOVERS";       //竞速情侣
+    public static final String MODE_RACE_REMIX = "MODE_RACE_REMIX";        //竞速疯狂
     @Id(autoincrement = true)
     private Long id;
     //歌曲名称
@@ -39,7 +39,7 @@ public class Song {
     //歌曲标题
     private String title;
     //歌曲封面路径
-    private int imageSrc;
+    private String imageSrc;
     //歌曲链接路径
     private String urlPath;
     //歌曲描述
@@ -60,9 +60,13 @@ public class Song {
     @Generated(hash = 1369727947)
     private transient SongDao myDao;
 
-    @Generated(hash = 936203596)
-    public Song(Long id, String songName, String songMode, int difficulty,
-                String title, int imageSrc, String urlPath, String description) {
+    @Generated(hash = 87031450)
+    public Song() {
+    }
+
+    @Generated(hash = 556178129)
+    public Song(Long id, String songName, String songMode, int difficulty, String title,
+            String imageSrc, String urlPath, String description) {
         this.id = id;
         this.songName = songName;
         this.songMode = songMode;
@@ -71,10 +75,6 @@ public class Song {
         this.imageSrc = imageSrc;
         this.urlPath = urlPath;
         this.description = description;
-    }
-
-    @Generated(hash = 87031450)
-    public Song() {
     }
 
     public String getSongName() {
@@ -139,11 +139,11 @@ public class Song {
         this.id = id;
     }
 
-    public int getImageSrc() {
+    public String getImageSrc() {
         return this.imageSrc;
     }
 
-    public Song setImageSrc(int imageSrc) {
+    public Song setImageSrc(String imageSrc) {
         this.imageSrc = imageSrc;
         return this;
     }
@@ -210,5 +210,18 @@ public class Song {
     public void __setDaoSession(DaoSession daoSession) {
         this.daoSession = daoSession;
         myDao = daoSession != null ? daoSession.getSongDao() : null;
+    }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "songName='" + songName + '\'' +
+                ", songMode='" + songMode + '\'' +
+                ", difficulty=" + difficulty +
+                ", title='" + title + '\'' +
+                ", imageSrc=" + imageSrc +
+                ", urlPath='" + urlPath + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

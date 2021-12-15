@@ -19,6 +19,11 @@ public class MyItemDecor extends RecyclerView.ItemDecoration {
     public static final int TYPE_VERTICAL = 1;
     public static final int TYPE_GRID = 2;
 
+    /**
+     * 设置RecyclerView中Item之间的间距
+     * @param type RecyclerView的排列类型
+     * @param itemMargin 间距大小，默认首个Item和末尾Item的外间距为0
+     */
     public MyItemDecor(int type, int itemMargin) {
         this.type = type;
         this.space = itemMargin;
@@ -26,6 +31,13 @@ public class MyItemDecor extends RecyclerView.ItemDecoration {
         this.lastItemMargin = 0;
     }
 
+    /**
+     * 设置RecyclerView中Item之间的间距
+     * @param type RecyclerView的排列类型
+     * @param itemMargin 间距大小
+     * @param firstItemMargin 首个Item的外间距
+     * @param lastItemMargin 末尾Item的外间距
+     */
     public MyItemDecor(int type, int itemMargin, int firstItemMargin, int lastItemMargin) {
         this.type = type;
         this.space = itemMargin;

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="common_blue">#FF009DE1</color>
-    <color name="common_gray">#999999</color>
+    <color name="common_gray_FF">#FF999999</color>
+    <color name="common_gray_AA">#33999999</color>
+    <!-- 潘通色系 -->
+    <color name="pantone_cyan">#91ffc2</color>
+    <color name="pantone_purple_1">#bdb8ff</color>
+    <color name="pantone_purple_2">#d980ff</color>
+    <color name="pantone_pink">#ffc2ed</color>
+    <color name="pantone_flesh">#ffb373</color>
+
 
     <color name="color_background_card">#EAEAEA</color>
     <color name="color_background_normal">#F7F8F9</color>

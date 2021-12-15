@@ -2,7 +2,7 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.example.app.common.view.WaveConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
@@ -12,6 +12,7 @@
             android:id="@+id/music_button"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_0"
+            android:foreground="?selectableItemBackground"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
@@ -40,6 +41,7 @@
             android:id="@+id/square_button"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_0"
+            android:foreground="?selectableItemBackground"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
@@ -68,7 +70,8 @@
             android:id="@+id/go_camera_view"
             android:layout_width="@dimen/dp_70"
             android:layout_height="match_parent"
-            android:src="#ffffff"
+            android:background="@color/pantone_cyan"
+            android:foreground="?selectableItemBackground"
             app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
             app:layout_constraintLeft_toRightOf="@+id/square_button"
             app:layout_constraintRight_toLeftOf="@+id/teach_button"
@@ -78,6 +81,7 @@
             android:id="@+id/teach_button"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_0"
+            android:foreground="?selectableItemBackground"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
@@ -106,6 +110,7 @@
             android:id="@+id/collect_button"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_0"
+            android:foreground="?selectableItemBackground"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
@@ -131,6 +136,6 @@
         </LinearLayout>
 
 
-    </com.example.app.common.view.WaveConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </merge>

@@ -1,0 +1,20 @@
+[
+  {
+    "songName": "baby",
+    "songMode": "MODE_RACE_INSANE",
+    "difficulty": 4,
+    "title": "",
+    "imageSrc": "R.mipmap.baby",
+    "urlPath": "",
+    "description": "老歌，歌谱包含转身，实际星级5~6星。"
+  },
+  {
+    "songName": "breakdown",
+    "songMode": "MODE_RACE_INSANE",
+    "difficulty": 11,
+    "title": "",
+    "imageSrc": "R.mipmap.breakdown",
+    "urlPath": "",
+    "description": "老歌，对角线谱子较多，在11星属于较难水平。"
+  }
+]
