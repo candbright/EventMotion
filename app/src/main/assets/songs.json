@@ -12,9 +12,18 @@
     "songName": "breakdown",
     "songMode": "MODE_RACE_INSANE",
     "difficulty": 11,
-    "title": "",
+    "title": "b站e舞模拟器",
     "imageSrc": "R.mipmap.breakdown",
-    "urlPath": "",
+    "urlPath": "https://m.bilibili.com/video/BV13a4y1x7Jm",
     "description": "老歌，对角线谱子较多，在11星属于较难水平。"
+  },
+  {
+    "songName": "concerto",
+    "songMode": "MODE_RACE_REMIX",
+    "difficulty": 11,
+    "title": "b站e舞模拟器",
+    "imageSrc": "R.mipmap.concerto",
+    "urlPath": "https://m.bilibili.com/video/BV1sv411Y7iz",
+    "description": "协奏曲，这首歌比较长，爆发段比较多，谱面质量还行，个人比较喜欢这首歌。"
   }
 ]

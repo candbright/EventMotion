@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
 android {
     compileSdk 29
     compileSdkVersion 29
@@ -30,7 +35,7 @@ android {
         viewBinding = true
     }
     greendao {
-        schemaVersion 6 //数据库版本号
+        schemaVersion 7 //数据库版本号
         daoPackage 'com.example.app.dao'
         // 设置DaoMaster、DaoSession、Dao 包名
         targetGenDir 'src/main/java'
@@ -47,6 +52,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -54,4 +60,5 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
     implementation 'org.greenrobot:greendao:3.3.0'
+    implementation 'com.github.lzyzsd:jsbridge:1.0.4'
 }

@@ -8,8 +8,9 @@
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2824074074074074" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_empty.xml" value="0.25" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_login.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_map.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_web.xml" value="0.2" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/component_navigation_bar_main.xml" value="0.33" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/fragment_base.xml" value="0.28072916666666664" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/fragment_login.xml" value="0.25" />
@@ -18,7 +19,7 @@
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/item_card.xml" value="0.42045454545454547" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/item_card_image.xml" value="0.33" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/item_group.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/item_mode_choose.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/item_mode_choose.xml" value="0.67" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/navigation_bar.xml" value="0.33" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/navigation_bottom_bar.xml" value="0.33" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/navigation_mode_bar.xml" value="0.22916666666666666" />

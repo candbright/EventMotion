@@ -21,10 +21,10 @@ public class NavigationBarManager {
         this.navigationBar = navigationBar;
         switch (mode) {
             case MODE_NAV_TOP_NO_LEFT_IMAGE:
-                navigationBar.menuButton.setVisibility(View.GONE);
+                navigationBar.menuButton.setImageResource(0);
                 break;
             case MODE_NAV_TOP_NO_RIGHT_IMAGE:
-                navigationBar.searchButton.setVisibility(View.GONE);
+                navigationBar.searchButton.setImageResource(0);
                 break;
             default:
                 break;
@@ -48,6 +48,16 @@ public class NavigationBarManager {
 
     public NavigationBarManager setTitle(int stringRes) {
         navigationBar.titleTv.setText(stringRes);
+        return this;
+    }
+
+    public NavigationBarManager setLeftImageSrc(int src) {
+        navigationBar.menuButton.setImageResource(src);
+        return this;
+    }
+
+    public NavigationBarManager setRightImageSrc(int src) {
+        navigationBar.searchButton.setImageResource(src);
         return this;
     }
 }

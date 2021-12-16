@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">E舞</string>
+    <string name="bilibili_name">哔哩哔哩</string>
     <string name="common_refresh">刷新</string>
     <string name="fragment_register_title">注册</string>
     <string name="navigation_title_all_song">所有歌曲</string>

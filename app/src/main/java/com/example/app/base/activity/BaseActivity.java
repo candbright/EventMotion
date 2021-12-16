@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
 
 import java.lang.reflect.InvocationTargetException;
@@ -13,7 +14,7 @@ import java.lang.reflect.ParameterizedType;
 /**
  * created by wyh in 2021/11/15
  */
-public abstract class BaseActivity<BindingView extends ViewBinding> extends BaseToolActivity {
+public abstract class BaseActivity<BindingView extends ViewBinding> extends AppCompatActivity {
     private ActivityLifecycleListener mLifecycleListener;
     protected BindingView rootView;
 
@@ -40,6 +41,9 @@ public abstract class BaseActivity<BindingView extends ViewBinding> extends Base
         }
     }
 
+    public BindingView getRootView() {
+        return rootView;
+    }
     //创建模块之前
     protected abstract void onCreateViewModule();
 

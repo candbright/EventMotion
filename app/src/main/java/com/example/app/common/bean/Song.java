@@ -27,7 +27,7 @@ public class Song {
     public static final String MODE_RACE_INSANE = "MODE_RACE_INSANE";       //竞速疯狂
     public static final String MODE_RACE_DOUBLE = "MODE_RACE_DOUBLE";       //竞速双踏板
     public static final String MODE_RACE_LOVERS = "MODE_RACE_LOVERS";       //竞速情侣
-    public static final String MODE_RACE_REMIX = "MODE_RACE_REMIX";        //竞速疯狂
+    public static final String MODE_RACE_REMIX = "MODE_RACE_REMIX";        //竞速混音
     @Id(autoincrement = true)
     private Long id;
     //歌曲名称

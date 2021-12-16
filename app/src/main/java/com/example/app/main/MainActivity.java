@@ -1,13 +1,12 @@
 package com.example.app.main;
 
-import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.app.R;
-import com.example.app.base.activity.BaseActivity;
+import com.example.app.base.activity.BaseToolActivity;
 import com.example.app.base.adapter.SortedItem;
 import com.example.app.common.adapter.MyDiffAdapter;
 import com.example.app.common.adapter.MyItemDecor;
@@ -28,7 +27,7 @@ import java.util.List;
 /**
  * <p>created by wyh in 2021/11/15</p>
  */
-public class MainActivity extends BaseActivity<ActivityMainBinding> {
+public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
 
     private static final String TAG = "<MainActivity>";
 
@@ -42,7 +41,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     protected void onCreateViewModule() {
         initBinding();
         initNavigatorBottom();
-        initSlideMenu();
         initData();
     }
 
@@ -66,17 +64,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         matchBottomTv();
     }
 
-
-    private void initSlideMenu() {
-        rootView.drawerLayout.setScrimColor(Color.TRANSPARENT);
-        rootView.leftDrawer.setOnClickListener(v -> rootView.drawerLayout.closeDrawers());
-        createMenuList();
-    }
-
-    private void createMenuList() {
-
-    }
-
     private void initData() {
         mData = new ArrayList<>();
         SongDaoHelper songDaoHelper = SongDaoHelper.getInstance(GlobalApp.getInstance());
@@ -87,7 +74,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             mData.add(new ImageCardItem().setImageSource(song.getImageSrc())
                     .setSongName(song.getSongName())
                     .setDifficulty(song.getDifficulty())
-                    .setDescription(song.getDescription()).setSortedIndex(song.getId()));
+                    .setDescription(song.getDescription())
+                    .setSortedIndex(song.getId()));
         }
         sortedAdapter = new MyDiffAdapter(mData);
         rootView.rvDataList.setAdapter(sortedAdapter);

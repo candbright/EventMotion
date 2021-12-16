@@ -2,7 +2,7 @@ package com.example.app.base.activity;
 
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewbinding.ViewBinding;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -10,7 +10,7 @@ import java.util.TimerTask;
 /**
  * created by wyh in 2021/11/16
  */
-public abstract class BaseToolActivity extends AppCompatActivity {
+public abstract class BaseToolActivity<BindingView extends ViewBinding> extends BaseActivity<BindingView> {
 
     private Toast exitToast;
 
@@ -35,6 +35,7 @@ public abstract class BaseToolActivity extends AppCompatActivity {
         if (isExit) {
             realExit();
             super.onBackPressed();
+            finish();
             return;
         }
         exit();
