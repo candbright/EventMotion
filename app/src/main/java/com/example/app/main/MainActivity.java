@@ -170,18 +170,18 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
     }
 
     public void matchMode() {
-        selectorBar.allModeBtn.setTextColor(getColor(R.color.color_text_black));
-        selectorBar.fancyModeBtn.setTextColor(getColor(R.color.color_text_black));
-        selectorBar.raceModeBtn.setTextColor(getColor(R.color.color_text_black));
+        selectorBar.allModeBtn.setTextColor(getColor(R.color.color_text_hint));
+        selectorBar.fancyModeBtn.setTextColor(getColor(R.color.color_text_hint));
+        selectorBar.raceModeBtn.setTextColor(getColor(R.color.color_text_hint));
         switch (mode) {
             case MODE_ALL:
-                selectorBar.allModeBtn.setTextColor(getColor(R.color.pantone_flesh_1));
+                selectorBar.allModeBtn.setTextColor(getColor(R.color.pantone_flesh_2));
                 break;
             case MODE_FANCY:
-                selectorBar.fancyModeBtn.setTextColor(getColor(R.color.pantone_flesh_1));
+                selectorBar.fancyModeBtn.setTextColor(getColor(R.color.pantone_flesh_2));
                 break;
             case MODE_RACE:
-                selectorBar.raceModeBtn.setTextColor(getColor(R.color.pantone_flesh_1));
+                selectorBar.raceModeBtn.setTextColor(getColor(R.color.pantone_flesh_2));
                 break;
         }
     }
