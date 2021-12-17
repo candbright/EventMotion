@@ -35,7 +35,7 @@ android {
         viewBinding = true
     }
     greendao {
-        schemaVersion 7 //数据库版本号
+        schemaVersion 9 //数据库版本号
         daoPackage 'com.example.app.dao'
         // 设置DaoMaster、DaoSession、Dao 包名
         targetGenDir 'src/main/java'

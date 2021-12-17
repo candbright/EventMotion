@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <HorizontalScrollView
+            android:id="@+id/mode_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="@dimen/dp_2">
+
+            <LinearLayout
+                android:id="@+id/mode_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/all_mode_btn"
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/all_song" />
+
+                <TextView
+                    android:id="@+id/fancy_mode_btn"
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/mode_fancy" />
+
+                <TextView
+                    android:id="@+id/race_mode_btn"
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/mode_speed" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/mode_detail_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="@dimen/dp_0">
+
+            <LinearLayout
+                android:id="@+id/mode_detail_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/all_song" />
+
+                <TextView
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/mode_study" />
+
+                <TextView
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/mode_perform" />
+
+                <TextView
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/mode_insane" />
+
+                <TextView
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/mode_double" />
+
+                <TextView
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/mode_lover" />
+
+                <TextView
+                    style="@style/style_text_selector_bar_item"
+                    android:text="@string/mode_remix" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+</merge>

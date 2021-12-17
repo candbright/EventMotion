@@ -2,7 +2,6 @@ package com.example.app.web;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.webkit.CookieManager;
 
 import com.example.app.base.activity.BaseActivity;
@@ -21,7 +20,7 @@ public class WebActivity extends BaseActivity<ActivityWebBinding> {
     }
 
     private void initBinding() {
-        navigationBar = NavigationBarBinding.bind(rootView.getRoot());
+        navigationBar = NavigationBarBinding.bind(rootBinding.getRoot());
     }
 
     @Override
@@ -57,9 +56,9 @@ public class WebActivity extends BaseActivity<ActivityWebBinding> {
             return;
         }
 
-        if (null != rootView.webView) {
+        if (null != rootBinding.webView) {
             CookieManager.getInstance().acceptCookie();
-            rootView.webView.loadUrl(url);
+            rootBinding.webView.loadUrl(url);
         }
     }
 }

@@ -16,7 +16,7 @@ import java.lang.reflect.ParameterizedType;
  */
 public abstract class BaseActivity<BindingView extends ViewBinding> extends AppCompatActivity {
     private ActivityLifecycleListener mLifecycleListener;
-    protected BindingView rootView;
+    protected BindingView rootBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +34,17 @@ public abstract class BaseActivity<BindingView extends ViewBinding> extends AppC
         Class cls = (Class) type.getActualTypeArguments()[0];
         try {
             Method inflate = cls.getDeclaredMethod("inflate", LayoutInflater.class);
-            rootView = (BindingView) inflate.invoke(null, getLayoutInflater());
-            setContentView(rootView.getRoot());
+            rootBinding = (BindingView) inflate.invoke(null, getLayoutInflater());
+            setContentView(rootBinding.getRoot());
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
 
-    public BindingView getRootView() {
-        return rootView;
+    public BindingView getRootBinding() {
+        return rootBinding;
     }
+
     //创建模块之前
     protected abstract void onCreateViewModule();
 
@@ -80,9 +81,10 @@ public abstract class BaseActivity<BindingView extends ViewBinding> extends AppC
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         if (mLifecycleListener != null) {
-            mLifecycleListener.onBackPressed();
+            if (mLifecycleListener.onBackPressed()) {
+                super.onBackPressed();
+            }
         }
     }
 

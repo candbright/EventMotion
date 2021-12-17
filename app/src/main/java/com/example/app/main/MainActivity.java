@@ -1,5 +1,9 @@
 package com.example.app.main;
 
+import static com.example.app.common.bean.Song.MODE_ALL;
+import static com.example.app.common.bean.Song.MODE_FANCY;
+import static com.example.app.common.bean.Song.MODE_RACE;
+
 import android.util.Log;
 import android.view.View;
 
@@ -17,6 +21,7 @@ import com.example.app.dao.SongDaoHelper;
 import com.example.app.databinding.ActivityMainBinding;
 import com.example.app.databinding.NavigationBarBinding;
 import com.example.app.databinding.NavigationBottomBarBinding;
+import com.example.app.databinding.SelectorBarBinding;
 import com.example.app.global.GlobalApp;
 import com.example.app.util.Utility;
 
@@ -32,21 +37,27 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
     private static final String TAG = "<MainActivity>";
 
     NavigationBarBinding navigationBarTop;
+    SelectorBarBinding selectorBar;
     NavigationBottomBarBinding navigationBarBottom;
-    private MyDiffAdapter sortedAdapter;
-    private List<SortedItem> mData;
+    MyDiffAdapter sortedAdapter;
+    List<SortedItem> mData;
     int navigatorId;
+    String mode = MODE_ALL;
+    String modeDetail;
 
     @Override
     protected void onCreateViewModule() {
         initBinding();
         initNavigatorBottom();
         initData();
+        matchBottomTv();
+        matchMode();
     }
 
     private void initBinding() {
-        navigationBarTop = NavigationBarBinding.bind(rootView.getRoot());
-        navigationBarBottom = NavigationBottomBarBinding.bind(rootView.getRoot());
+        navigationBarTop = NavigationBarBinding.bind(rootBinding.getRoot());
+        selectorBar = SelectorBarBinding.bind(rootBinding.getRoot());
+        navigationBarBottom = NavigationBottomBarBinding.bind(rootBinding.getRoot());
     }
 
     private void initNavigatorBottom() {
@@ -58,10 +69,10 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
         navigationBarBottom.teachTv.setText(R.string.navigation_bottom_teach);
         navigationBarBottom.collectImage.setImageResource(R.drawable.navigation_star_collect);
         navigationBarBottom.collectTv.setText(R.string.navigation_bottom_collect);
-        navigationBarBottom.goCameraView.setOnClickListener(v -> {
+        navigationBarBottom.midButton.setImageResource(R.drawable.navigation_star_ufo);
+        navigationBarBottom.midButton.setOnClickListener(v -> {
 
         });
-        matchBottomTv();
     }
 
     private void initData() {
@@ -78,12 +89,22 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
                     .setSortedIndex(song.getId()));
         }
         sortedAdapter = new MyDiffAdapter(mData);
-        rootView.rvDataList.setAdapter(sortedAdapter);
-        rootView.rvDataList.setLayoutManager(new LinearLayoutManager(this));
-        rootView.rvDataList.addItemDecoration(new MyItemDecor(MyItemDecor.TYPE_VERTICAL,
-                (int) Utility.dip2px(10),
-                (int) Utility.dip2px(10),
-                (int) Utility.dip2px(10)));
+        rootBinding.rvDataList.setAdapter(sortedAdapter);
+        rootBinding.rvDataList.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void setData(List<Song> data) {
+        mData.clear();
+        for (int i = 0; i < data.size(); i++) {
+            Song song = data.get(i);
+            Log.d(TAG, "add song[" + i + "]: id = " + song.getId());
+            mData.add(new ImageCardItem().setImageSource(song.getImageSrc())
+                    .setSongName(song.getSongName())
+                    .setDifficulty(song.getDifficulty())
+                    .setDescription(song.getDescription())
+                    .setSortedIndex(song.getId()));
+        }
+        sortedAdapter.notifyDiff();
     }
 
     @Override
@@ -144,6 +165,23 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
                 break;
             case 3:
                 navigationBarBottom.collectTv.setVisibility(View.VISIBLE);
+                break;
+        }
+    }
+
+    public void matchMode() {
+        selectorBar.allModeBtn.setTextColor(getColor(R.color.color_text_black));
+        selectorBar.fancyModeBtn.setTextColor(getColor(R.color.color_text_black));
+        selectorBar.raceModeBtn.setTextColor(getColor(R.color.color_text_black));
+        switch (mode) {
+            case MODE_ALL:
+                selectorBar.allModeBtn.setTextColor(getColor(R.color.pantone_flesh_1));
+                break;
+            case MODE_FANCY:
+                selectorBar.fancyModeBtn.setTextColor(getColor(R.color.pantone_flesh_1));
+                break;
+            case MODE_RACE:
+                selectorBar.raceModeBtn.setTextColor(getColor(R.color.pantone_flesh_1));
                 break;
         }
     }

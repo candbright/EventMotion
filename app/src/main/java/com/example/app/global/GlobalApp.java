@@ -2,17 +2,13 @@ package com.example.app.global;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.util.Log;
 
-import com.example.app.R;
 import com.example.app.common.bean.Song;
 import com.example.app.dao.SongDaoHelper;
-import com.example.app.util.IOUtil;
 import com.example.app.util.Utility;
 
-import java.lang.reflect.Field;
 import java.util.List;
 
 /**
@@ -40,15 +36,30 @@ public class GlobalApp extends Application {
     private void initDao() {
         SongDaoHelper songDaoHelper = SongDaoHelper.getInstance(this);
         songDaoHelper.deleteAll();
-        List<Song> songs = songDaoHelper.searchAll();
-        if (songs.size() == 0) {
-            addSongs(songDaoHelper);
+        List<Song> songsDataBase = songDaoHelper.searchAll();
+        String jsonStr = Utility.getJson(this, "songs.json");
+        List<Song> songsData = Utility.jsonToBean(jsonStr, Song.class);
+        if (songsDataBase.size() == 0) {
+            addSongs(songDaoHelper, songsData);
+            return;
+        }
+
+
+        for (int i = 0; i < songsData.size(); i++) {
+            if (!songsData.get(i).toString().equals(songsDataBase.get(i).toString())) {
+                songDaoHelper.insertOrReplace(new Song().setSongName(songsData.get(i).getSongName())
+                        .setSongMode(songsData.get(i).getSongMode())
+                        .setDifficulty(songsData.get(i).getDifficulty())
+                        .setImageSrc(songsData.get(i).getImageSrc())
+                        .setUrlPath(songsData.get(i).getUrlPath())
+                        .setDescription(songsData.get(i).getDescription()));
+            }
         }
     }
 
-    private void addSongs(SongDaoHelper songDaoHelper) {
-        String jsonStr = Utility.getJson(this, "songs.json");
-        List<Song> songs = Utility.jsonToBean(jsonStr, Song.class);
+    private void addSongs(SongDaoHelper songDaoHelper, List<Song> songs) {
+
+
         for (Song song : songs) {
             songDaoHelper.insertOrReplace(new Song().setSongName(song.getSongName())
                     .setSongMode(song.getSongMode())
@@ -58,7 +69,6 @@ public class GlobalApp extends Application {
                     .setDescription(song.getDescription()));
         }
     }
-
 
 
     public static String getResString(int resId) {

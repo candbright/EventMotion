@@ -2,8 +2,10 @@ package com.example.app.common.bean;
 
 import com.example.app.dao.DaoSession;
 import com.example.app.dao.SongDao;
+import com.example.app.dao.StringConverter;
 
 import org.greenrobot.greendao.DaoException;
+import org.greenrobot.greendao.annotation.Convert;
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
@@ -18,22 +20,24 @@ import com.example.app.dao.SongCommentDao;
  */
 @Entity
 public class Song {
-    public static final String MODE_FANCY_LEARN = "MODE_FANCY_LEARN";       //花式学习
-    public static final String MODE_FANCY_PERFORM = "MODE_FANCY_PERFORM";     //花式表演
-    public static final String MODE_FANCY_INSANE = "MODE_FANCY_INSANE";      //花式疯狂
-    public static final String MODE_FANCY_DOUBLE = "MODE_FANCY_DOUBLE";      //花式双踏板
-    public static final String MODE_FANCY_LOVERS = "MODE_FANCY_LOVERS";      //花式情侣
-    public static final String MODE_FANCY_REMIX = "MODE_FANCY_REMIX";       //花式混音
-    public static final String MODE_RACE_INSANE = "MODE_RACE_INSANE";       //竞速疯狂
-    public static final String MODE_RACE_DOUBLE = "MODE_RACE_DOUBLE";       //竞速双踏板
-    public static final String MODE_RACE_LOVERS = "MODE_RACE_LOVERS";       //竞速情侣
-    public static final String MODE_RACE_REMIX = "MODE_RACE_REMIX";        //竞速混音
+    public static final String MODE_ALL = "MODE_ALL";       //所有
+    public static final String MODE_FANCY = "MODE_FANCY";       //花式
+    public static final String MODE_RACE = "MODE_RACE";       //竞速
+
+    public static final String LEARN = "LEARN";       //学习
+    public static final String PERFORM = "PERFORM";     //表演
+    public static final String INSANE = "INSANE";      //疯狂
+    public static final String DOUBLE = "DOUBLE";      //双踏板
+    public static final String LOVER = "LOVER";      //情侣
+    public static final String REMIX = "REMIX";       //混音
     @Id(autoincrement = true)
     private Long id;
     //歌曲名称
     private String songName;
     //歌曲所在模式
     private String songMode;
+    //歌曲具体模式
+    private String songModeDetail;
     //歌曲难度
     private int difficulty;
     //歌曲标题
@@ -41,7 +45,8 @@ public class Song {
     //歌曲封面路径
     private String imageSrc;
     //歌曲链接路径
-    private String urlPath;
+    @Convert(columnType = String.class, converter = StringConverter.class)
+    private List<String> urlPath;
     //歌曲描述
     private String description;
     //歌曲常见键位类型
@@ -64,18 +69,22 @@ public class Song {
     public Song() {
     }
 
-    @Generated(hash = 556178129)
-    public Song(Long id, String songName, String songMode, int difficulty, String title,
-            String imageSrc, String urlPath, String description) {
+
+    @Generated(hash = 1277375759)
+    public Song(Long id, String songName, String songMode, String songModeDetail,
+                int difficulty, String title, String imageSrc, List<String> urlPath,
+                String description) {
         this.id = id;
         this.songName = songName;
         this.songMode = songMode;
+        this.songModeDetail = songModeDetail;
         this.difficulty = difficulty;
         this.title = title;
         this.imageSrc = imageSrc;
         this.urlPath = urlPath;
         this.description = description;
     }
+
 
     public String getSongName() {
         return songName;
@@ -93,6 +102,10 @@ public class Song {
     public Song setSongMode(String songMode) {
         this.songMode = songMode;
         return this;
+    }
+
+    public boolean isFancyMode() {
+        return songMode.equals(MODE_FANCY);
     }
 
     public int getDifficulty() {
@@ -113,11 +126,11 @@ public class Song {
         return this;
     }
 
-    public String getUrlPath() {
+    public List<String> getUrlPath() {
         return urlPath;
     }
 
-    public Song setUrlPath(String urlPath) {
+    public Song setUrlPath(List<String> urlPath) {
         this.urlPath = urlPath;
         return this;
     }
@@ -215,13 +228,23 @@ public class Song {
     @Override
     public String toString() {
         return "Song{" +
-                "songName='" + songName + '\'' +
+                ", songName='" + songName + '\'' +
                 ", songMode='" + songMode + '\'' +
+                ", songModeDetail='" + songModeDetail + '\'' +
                 ", difficulty=" + difficulty +
                 ", title='" + title + '\'' +
-                ", imageSrc=" + imageSrc +
-                ", urlPath='" + urlPath + '\'' +
+                ", imageSrc='" + imageSrc + '\'' +
+                ", urlPath=" + urlPath +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+    public String getSongModeDetail() {
+        return this.songModeDetail;
+    }
+
+
+    public void setSongModeDetail(String songModeDetail) {
+        this.songModeDetail = songModeDetail;
     }
 }

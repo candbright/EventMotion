@@ -4,6 +4,8 @@ import android.content.Context;
 
 import com.example.app.common.bean.Song;
 
+import org.greenrobot.greendao.query.QueryBuilder;
+
 import java.util.List;
 
 /**
@@ -67,8 +69,7 @@ public class SongDaoHelper {
     public void update(Song song) {
         Song old = mSongDao.queryBuilder().where(SongDao.Properties.Id.eq(song.getId())).build().unique();
         if (old != null) {
-            old.setSongName("iris");
-            mSongDao.update(old);
+            mSongDao.update(song);
         }
     }
 
@@ -81,8 +82,23 @@ public class SongDaoHelper {
     }
 
     public List<Song> searchById(String id) {
-        List<Song> songs = (List<Song>) mSongDao.queryBuilder().where(SongDao.Properties.Id.eq(id)).build().unique();
+        QueryBuilder<Song> songQueryBuilder = mSongDao.queryBuilder();
+        List<Song> songs = songQueryBuilder.where(SongDao.Properties.Id.eq(id)).list();
         return songs;
+    }
+
+    public List<Song> searchByMode(String songMode) {
+        QueryBuilder<Song> songQueryBuilder = mSongDao.queryBuilder();
+        List<Song> songs = songQueryBuilder.where(SongDao.Properties.SongMode.eq(songMode)).list();
+        return songs;
+    }
+
+    public List<Song> searchFancyMode() {
+        return searchByMode(Song.MODE_FANCY);
+    }
+
+    public List<Song> searchRaceMode() {
+        return searchByMode(Song.MODE_RACE);
     }
 
     public List<Song> searchAll() {

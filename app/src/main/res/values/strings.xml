@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">E舞</string>
+    <string name="app_name">E舞吧</string>
     <string name="bilibili_name">哔哩哔哩</string>
+    <string name="iqiyi_name">爱奇艺</string>
+    <string name="title_loading">加载中</string>
     <string name="common_refresh">刷新</string>
     <string name="fragment_register_title">注册</string>
-    <string name="navigation_title_all_song">所有歌曲</string>
-    <string name="navigation_title_choose_mode">模式选择</string>
-    <string name="navigation_title_fancy">花式模式</string>
-    <string name="navigation_title_speed">竞速模式</string>
+    <string name="main_title">歌曲列表</string>
+    <string name="all_song">全部</string>
+    <string name="mode_choose">模式选择</string>
+    <string name="mode_fancy">花式</string>
+    <string name="mode_fancy_title">花式模式</string>
+    <string name="mode_speed">竞速</string>
+    <string name="mode_speed_title">竞速模式</string>
+
+    <string name="mode_study">学习</string>
+    <string name="mode_perform">表演</string>
+    <string name="mode_insane">疯狂</string>
+    <string name="mode_double">双踏板</string>
+    <string name="mode_lover">情侣</string>
+    <string name="mode_remix">混音</string>
 
     <string name="navigation_bottom_songs">曲库</string>
     <string name="navigation_bottom_teach">教学</string>
     <string name="navigation_bottom_square">广场</string>
     <string name="navigation_bottom_collect">收藏</string>
 
-    <string name="item_card_song_name">歌曲名: %s</string>
+    <string name="item_card_song_name">歌曲名: 《%s》</string>
     <string name="item_card_song_difficulty">难度: %d</string>
     <string name="item_card_song_description">简介: %s</string>
 

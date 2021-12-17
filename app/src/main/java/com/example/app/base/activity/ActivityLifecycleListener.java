@@ -32,11 +32,14 @@ public class ActivityLifecycleListener {
         }
     }
 
-    public void onBackPressed() {
+    /**
+     *返回true，则调用super方法。返回false，则不调用。
+     */
+    public boolean onBackPressed() {
         if (LOGD) {
             Log.d(TAG, "onBackPressed()");
         }
-
+        return true;
     }
 
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {

@@ -48,7 +48,7 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
             app:layout_constraintLeft_toRightOf="@+id/music_button"
-            app:layout_constraintRight_toLeftOf="@+id/go_camera_view"
+            app:layout_constraintRight_toLeftOf="@+id/mid_button"
             app:layout_constraintTop_toTopOf="@+id/container_bottom">
 
             <ImageView
@@ -69,10 +69,10 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/go_camera_view"
+            android:id="@+id/mid_button"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_0"
-            android:background="@color/pantone_flesh_2"
+            android:background="@color/pantone_flesh_1"
             android:foreground="?selectableItemBackground"
             android:padding="@dimen/dp_10"
             android:src="@drawable/navigation_star_ufo"
@@ -90,7 +90,7 @@
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
-            app:layout_constraintLeft_toRightOf="@+id/go_camera_view"
+            app:layout_constraintLeft_toRightOf="@+id/mid_button"
             app:layout_constraintRight_toLeftOf="@+id/collect_button"
             app:layout_constraintTop_toTopOf="@+id/container_bottom">
 
