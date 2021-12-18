@@ -3,16 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/drawable-v24/button_wave.xml" value="0.17685185185185184" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2140625" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2824074074074074" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/drawable/selector_bar_mode.xml" value="0.19947916666666668" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_empty.xml" value="0.25" />
+        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_empty.xml" value="0.2046875" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_login.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_map.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_search.xml" value="0.18333333333333332" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/activity_web.xml" value="0.2" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/component_navigation_bar_main.xml" value="0.33" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/fragment_base.xml" value="0.28072916666666664" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/fragment_login.xml" value="0.25" />
@@ -21,13 +17,8 @@
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/item_card.xml" value="0.42045454545454547" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/item_card_image.xml" value="0.33" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/item_group.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/item_mode_choose.xml" value="0.67" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/navigation_bar.xml" value="0.33" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/navigation_bottom_bar.xml" value="0.33" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/navigation_mode_bar.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/remote_group_holder.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/selector_bar.xml" value="0.33" />
-        <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/menu/menu_main.xml" value="0.25" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2140625" />
       </map>
     </option>

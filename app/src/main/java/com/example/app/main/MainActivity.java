@@ -1,9 +1,5 @@
 package com.example.app.main;
 
-import static com.example.app.common.bean.Song.MODE_ALL;
-import static com.example.app.common.bean.Song.MODE_FANCY;
-import static com.example.app.common.bean.Song.MODE_RACE;
-
 import android.util.Log;
 import android.view.View;
 
@@ -13,7 +9,6 @@ import com.example.app.R;
 import com.example.app.base.activity.BaseToolActivity;
 import com.example.app.base.adapter.SortedItem;
 import com.example.app.common.adapter.MyDiffAdapter;
-import com.example.app.common.adapter.MyItemDecor;
 import com.example.app.common.bean.Song;
 import com.example.app.common.item.ImageCardItem;
 import com.example.app.common.listener.OnItemEventListener;
@@ -23,10 +18,18 @@ import com.example.app.databinding.NavigationBarBinding;
 import com.example.app.databinding.NavigationBottomBarBinding;
 import com.example.app.databinding.SelectorBarBinding;
 import com.example.app.global.GlobalApp;
-import com.example.app.util.Utility;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.app.common.bean.Song.DOUBLE;
+import static com.example.app.common.bean.Song.INSANE;
+import static com.example.app.common.bean.Song.LOVER;
+import static com.example.app.common.bean.Song.MODE_FANCY;
+import static com.example.app.common.bean.Song.MODE_RACE;
+import static com.example.app.common.bean.Song.PERFORM;
+import static com.example.app.common.bean.Song.REMIX;
+import static com.example.app.common.bean.Song.STUDY;
 
 
 /**
@@ -35,7 +38,8 @@ import java.util.List;
 public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
 
     private static final String TAG = "<MainActivity>";
-
+    public static final String MODE_ALL = "MODE_ALL";
+    public static final String MODE_DETAIL_ALL = "MODE_DETAIL_ALL";
     NavigationBarBinding navigationBarTop;
     SelectorBarBinding selectorBar;
     NavigationBottomBarBinding navigationBarBottom;
@@ -43,7 +47,7 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
     List<SortedItem> mData;
     int navigatorId;
     String mode = MODE_ALL;
-    String modeDetail;
+    String modeDetail = MODE_DETAIL_ALL;
 
     @Override
     protected void onCreateViewModule() {
@@ -52,6 +56,7 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
         initData();
         matchBottomTv();
         matchMode();
+        matchModeDetail();
     }
 
     private void initBinding() {
@@ -182,6 +187,38 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
                 break;
             case MODE_RACE:
                 selectorBar.raceModeBtn.setTextColor(getColor(R.color.pantone_flesh_2));
+                break;
+        }
+    }
+    public void matchModeDetail() {
+        selectorBar.allDetailBtn.setTextColor(getColor(R.color.color_text_hint));
+        selectorBar.studyDetailBtn.setTextColor(getColor(R.color.color_text_hint));
+        selectorBar.performDetailBtn.setTextColor(getColor(R.color.color_text_hint));
+        selectorBar.insaneDetailBtn.setTextColor(getColor(R.color.color_text_hint));
+        selectorBar.doubleDetailBtn.setTextColor(getColor(R.color.color_text_hint));
+        selectorBar.loverDetailBtn.setTextColor(getColor(R.color.color_text_hint));
+        selectorBar.remixDetailBtn.setTextColor(getColor(R.color.color_text_hint));
+        switch (modeDetail) {
+            case MODE_DETAIL_ALL:
+                selectorBar.allDetailBtn.setTextColor(getColor(R.color.pantone_flesh_2));
+                break;
+            case STUDY:
+                selectorBar.studyDetailBtn.setTextColor(getColor(R.color.pantone_flesh_2));
+                break;
+            case PERFORM:
+                selectorBar.performDetailBtn.setTextColor(getColor(R.color.pantone_flesh_2));
+                break;
+            case INSANE:
+                selectorBar.insaneDetailBtn.setTextColor(getColor(R.color.pantone_flesh_2));
+                break;
+            case DOUBLE:
+                selectorBar.doubleDetailBtn.setTextColor(getColor(R.color.pantone_flesh_2));
+                break;
+            case LOVER:
+                selectorBar.loverDetailBtn.setTextColor(getColor(R.color.pantone_flesh_2));
+                break;
+            case REMIX:
+                selectorBar.remixDetailBtn.setTextColor(getColor(R.color.pantone_flesh_2));
                 break;
         }
     }

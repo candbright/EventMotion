@@ -2,11 +2,15 @@ package com.example.app.dao;
 
 import android.content.Context;
 
+import com.example.app.R;
 import com.example.app.common.bean.Song;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
 import java.util.List;
+
+import static com.example.app.main.MainActivity.MODE_ALL;
+import static com.example.app.main.MainActivity.MODE_DETAIL_ALL;
 
 /**
  * <p>created by wyh in 2021/12/13</p>
@@ -93,6 +97,22 @@ public class SongDaoHelper {
         return songs;
     }
 
+    public List<Song> searchByModeAndDetail(String songMode, String songModeDetail) {
+        QueryBuilder<Song> songQueryBuilder = mSongDao.queryBuilder();
+        if (songMode.equals(MODE_ALL)) {
+            if (songModeDetail.equals(MODE_DETAIL_ALL)) {
+                return searchAll();
+            }
+            List<Song> songs = songQueryBuilder.where(SongDao.Properties.SongModeDetail.eq(songModeDetail)).list();
+            return songs;
+        }
+        if (songModeDetail.equals(MODE_DETAIL_ALL)) {
+            return searchAll();
+        }
+        List<Song> songs = songQueryBuilder.where(SongDao.Properties.SongMode.eq(songMode))
+                .where(SongDao.Properties.SongModeDetail.eq(songModeDetail)).list();
+        return songs;
+    }
     public List<Song> searchFancyMode() {
         return searchByMode(Song.MODE_FANCY);
     }

@@ -20,11 +20,10 @@ import com.example.app.dao.SongCommentDao;
  */
 @Entity
 public class Song {
-    public static final String MODE_ALL = "MODE_ALL";       //所有
     public static final String MODE_FANCY = "MODE_FANCY";       //花式
     public static final String MODE_RACE = "MODE_RACE";       //竞速
 
-    public static final String LEARN = "LEARN";       //学习
+    public static final String STUDY = "STUDY";       //学习
     public static final String PERFORM = "PERFORM";     //表演
     public static final String INSANE = "INSANE";      //疯狂
     public static final String DOUBLE = "DOUBLE";      //双踏板
