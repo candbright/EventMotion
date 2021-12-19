@@ -35,7 +35,6 @@ public class GlobalApp extends Application {
 
     private void initDao() {
         SongDaoHelper songDaoHelper = SongDaoHelper.getInstance(this);
-        songDaoHelper.deleteAll();
         List<Song> songsDataBase = songDaoHelper.searchAll();
         String jsonStr = Utility.getJson(this, "songs.json");
         List<Song> songsData = Utility.jsonToBean(jsonStr, Song.class);
@@ -49,6 +48,7 @@ public class GlobalApp extends Application {
             if (!songsData.get(i).toString().equals(songsDataBase.get(i).toString())) {
                 songDaoHelper.insertOrReplace(new Song().setSongName(songsData.get(i).getSongName())
                         .setSongMode(songsData.get(i).getSongMode())
+                        .setSongModeDetail(songsData.get(i).getSongModeDetail())
                         .setDifficulty(songsData.get(i).getDifficulty())
                         .setImageSrc(songsData.get(i).getImageSrc())
                         .setUrlPath(songsData.get(i).getUrlPath())
@@ -63,6 +63,7 @@ public class GlobalApp extends Application {
         for (Song song : songs) {
             songDaoHelper.insertOrReplace(new Song().setSongName(song.getSongName())
                     .setSongMode(song.getSongMode())
+                    .setSongModeDetail(song.getSongModeDetail())
                     .setDifficulty(song.getDifficulty())
                     .setImageSrc(song.getImageSrc())
                     .setUrlPath(song.getUrlPath())

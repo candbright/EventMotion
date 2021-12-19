@@ -107,10 +107,10 @@ public class SongDaoHelper {
             return songs;
         }
         if (songModeDetail.equals(MODE_DETAIL_ALL)) {
-            return searchAll();
+            return searchByMode(songMode);
         }
-        List<Song> songs = songQueryBuilder.where(SongDao.Properties.SongMode.eq(songMode))
-                .where(SongDao.Properties.SongModeDetail.eq(songModeDetail)).list();
+        List<Song> songs = songQueryBuilder.where(SongDao.Properties.SongMode.eq(songMode),
+                SongDao.Properties.SongModeDetail.eq(songModeDetail)).list();
         return songs;
     }
     public List<Song> searchFancyMode() {

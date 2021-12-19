@@ -243,7 +243,8 @@ public class Song {
     }
 
 
-    public void setSongModeDetail(String songModeDetail) {
+    public Song setSongModeDetail(String songModeDetail) {
         this.songModeDetail = songModeDetail;
+        return this;
     }
 }
