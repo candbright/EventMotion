@@ -227,7 +227,7 @@ public class Song {
     @Override
     public String toString() {
         return "Song{" +
-                ", songName='" + songName + '\'' +
+                "songName='" + songName + '\'' +
                 ", songMode='" + songMode + '\'' +
                 ", songModeDetail='" + songModeDetail + '\'' +
                 ", difficulty=" + difficulty +

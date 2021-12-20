@@ -1,7 +1,5 @@
 package com.example.app.main;
 
-import android.widget.TextView;
-
 import com.example.app.base.activity.BaseActivity;
 import com.example.app.databinding.ActivitySearchBinding;
 

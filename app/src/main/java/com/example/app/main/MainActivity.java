@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.app.R;
 import com.example.app.base.activity.BaseToolActivity;
@@ -45,16 +46,13 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
     NavigationBottomBarBinding navigationBarBottom;
     MyDiffAdapter sortedAdapter;
     List<SortedItem> mData;
-    int navigatorId;
     String mode = MODE_ALL;
     String modeDetail = MODE_DETAIL_ALL;
 
     @Override
     protected void onCreateViewModule() {
         initBinding();
-        initNavigatorBottom();
         initData();
-        matchBottomTv();
         matchMode();
         matchModeDetail();
     }
@@ -63,21 +61,6 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
         navigationBarTop = NavigationBarBinding.bind(rootBinding.getRoot());
         selectorBar = SelectorBarBinding.bind(rootBinding.getRoot());
         navigationBarBottom = NavigationBottomBarBinding.bind(rootBinding.getRoot());
-    }
-
-    private void initNavigatorBottom() {
-        navigationBarBottom.musicImage.setImageResource(R.drawable.navigation_star_songs);
-        navigationBarBottom.musicTv.setText(R.string.navigation_bottom_songs);
-        navigationBarBottom.squareImage.setImageResource(R.drawable.navigation_star_square);
-        navigationBarBottom.squareTv.setText(R.string.navigation_bottom_square);
-        navigationBarBottom.teachImage.setImageResource(R.drawable.navigation_star_teach);
-        navigationBarBottom.teachTv.setText(R.string.navigation_bottom_teach);
-        navigationBarBottom.collectImage.setImageResource(R.drawable.navigation_star_collect);
-        navigationBarBottom.collectTv.setText(R.string.navigation_bottom_collect);
-        navigationBarBottom.midButton.setImageResource(R.drawable.navigation_star_ufo);
-        navigationBarBottom.midButton.setOnClickListener(v -> {
-
-        });
     }
 
     private void initData() {
@@ -121,58 +104,6 @@ public class MainActivity extends BaseToolActivity<ActivityMainBinding> {
         sortedAdapter.setOnItemListener(listener);
     }
 
-    public void setMusicButtonClickListener(View.OnClickListener listener) {
-        navigationBarBottom.musicButton.setOnClickListener(v -> {
-            navigatorId = 0;
-            matchBottomTv();
-            listener.onClick(v);
-        });
-    }
-
-    public void setSquareButtonClickListener(View.OnClickListener listener) {
-        navigationBarBottom.squareButton.setOnClickListener(v -> {
-            navigatorId = 1;
-            matchBottomTv();
-            listener.onClick(v);
-        });
-    }
-
-    public void setTeachButtonClickListener(View.OnClickListener listener) {
-        navigationBarBottom.teachButton.setOnClickListener(v -> {
-            navigatorId = 2;
-            matchBottomTv();
-            listener.onClick(v);
-        });
-    }
-
-    public void setCollectButtonClickListener(View.OnClickListener listener) {
-        navigationBarBottom.collectButton.setOnClickListener(v -> {
-            navigatorId = 3;
-            matchBottomTv();
-            listener.onClick(v);
-        });
-    }
-
-    public void matchBottomTv() {
-        navigationBarBottom.musicTv.setVisibility(View.GONE);
-        navigationBarBottom.teachTv.setVisibility(View.GONE);
-        navigationBarBottom.collectTv.setVisibility(View.GONE);
-        navigationBarBottom.squareTv.setVisibility(View.GONE);
-        switch (navigatorId) {
-            case 0:
-                navigationBarBottom.musicTv.setVisibility(View.VISIBLE);
-                break;
-            case 1:
-                navigationBarBottom.squareTv.setVisibility(View.VISIBLE);
-                break;
-            case 2:
-                navigationBarBottom.teachTv.setVisibility(View.VISIBLE);
-                break;
-            case 3:
-                navigationBarBottom.collectTv.setVisibility(View.VISIBLE);
-                break;
-        }
-    }
 
     public void matchMode() {
         selectorBar.allModeBtn.setTextColor(getColor(R.color.color_text_hint));

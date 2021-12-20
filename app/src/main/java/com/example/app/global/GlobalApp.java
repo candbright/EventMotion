@@ -42,11 +42,16 @@ public class GlobalApp extends Application {
             addSongs(songDaoHelper, songsData);
             return;
         }
-
+        if (songsDataBase.size() > songsData.size()) {
+            songDaoHelper.deleteAll();
+            addSongs(songDaoHelper, songsData);
+            return;
+        }
 
         for (int i = 0; i < songsData.size(); i++) {
             if (!songsData.get(i).toString().equals(songsDataBase.get(i).toString())) {
                 songDaoHelper.insertOrReplace(new Song().setSongName(songsData.get(i).getSongName())
+                        .setTitle(songsData.get(i).getTitle())
                         .setSongMode(songsData.get(i).getSongMode())
                         .setSongModeDetail(songsData.get(i).getSongModeDetail())
                         .setDifficulty(songsData.get(i).getDifficulty())
@@ -62,6 +67,7 @@ public class GlobalApp extends Application {
 
         for (Song song : songs) {
             songDaoHelper.insertOrReplace(new Song().setSongName(song.getSongName())
+                    .setTitle(song.getTitle())
                     .setSongMode(song.getSongMode())
                     .setSongModeDetail(song.getSongModeDetail())
                     .setDifficulty(song.getDifficulty())

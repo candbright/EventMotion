@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">E舞吧</string>
+    <string name="blank_name">空白网页</string>
+    <string name="load_failed">加载失败</string>
     <string name="bilibili_name">哔哩哔哩</string>
     <string name="iqiyi_name">爱奇艺</string>
+    <string name="youku_name">优酷视频</string>
     <string name="title_loading">加载中</string>
     <string name="common_refresh">刷新</string>
     <string name="fragment_register_title">注册</string>

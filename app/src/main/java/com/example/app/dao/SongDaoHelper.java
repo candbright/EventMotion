@@ -91,12 +91,6 @@ public class SongDaoHelper {
         return songs;
     }
 
-    public List<Song> searchByMode(String songMode) {
-        QueryBuilder<Song> songQueryBuilder = mSongDao.queryBuilder();
-        List<Song> songs = songQueryBuilder.where(SongDao.Properties.SongMode.eq(songMode)).list();
-        return songs;
-    }
-
     public List<Song> searchByModeAndDetail(String songMode, String songModeDetail) {
         QueryBuilder<Song> songQueryBuilder = mSongDao.queryBuilder();
         if (songMode.equals(MODE_ALL)) {
@@ -107,18 +101,11 @@ public class SongDaoHelper {
             return songs;
         }
         if (songModeDetail.equals(MODE_DETAIL_ALL)) {
-            return searchByMode(songMode);
+            return songQueryBuilder.where(SongDao.Properties.SongMode.eq(songMode)).list();
         }
         List<Song> songs = songQueryBuilder.where(SongDao.Properties.SongMode.eq(songMode),
                 SongDao.Properties.SongModeDetail.eq(songModeDetail)).list();
         return songs;
-    }
-    public List<Song> searchFancyMode() {
-        return searchByMode(Song.MODE_FANCY);
-    }
-
-    public List<Song> searchRaceMode() {
-        return searchByMode(Song.MODE_RACE);
     }
 
     public List<Song> searchAll() {
