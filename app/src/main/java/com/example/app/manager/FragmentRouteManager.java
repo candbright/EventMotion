@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.app.R;
 import com.example.app.base.fragment.BaseFragment;
 
 /**
@@ -40,18 +39,17 @@ public class FragmentRouteManager<Fragment extends BaseFragment> {
     public void addSubFragment(BaseFragment newFragment, int animRes) {
 
         if (null == newFragment) {
-            Log.e(TAG, "(addSubFragment) --- can not add an null fragment");
+            Log.e(TAG, "addSubFragment error, can't add a null fragment");
             return;
         }
 
         if (null == fragmentManager) {
-            Log.e(TAG, "(addFragment) --- fragment manager is null");
+            Log.e(TAG, "addSubFragment error, fragment manager is null");
             return;
         }
 
         if (-1 == fragment.getContainerId()) {
-            Log.e(TAG, "(addSubFragment) --- error container id " +
-                    "--- try to use addFragment(int containerViewId, BCFragment fragment)");
+            Log.e(TAG, "addSubFragment error, error container id ");
             return;
         }
 

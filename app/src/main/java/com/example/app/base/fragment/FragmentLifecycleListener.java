@@ -4,7 +4,7 @@ import android.content.Intent;
 
 public class FragmentLifecycleListener {
 
-    public void onModulesCreated() {
+    public void onViewCreated() {
     }
 
     public void onResume() {

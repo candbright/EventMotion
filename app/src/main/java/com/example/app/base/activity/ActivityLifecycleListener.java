@@ -8,9 +8,10 @@ import android.util.Log;
 public class ActivityLifecycleListener {
     private static final String TAG = "<Lifecycle>";
     private static final boolean LOGD = true;
-    public void onModulesCreated() {
+
+    public void onViewCreated() {
         if (LOGD) {
-            Log.d(TAG, "onModulesCreated()");
+            Log.d(TAG, "onViewCreated()");
         }
     }
 
@@ -33,7 +34,7 @@ public class ActivityLifecycleListener {
     }
 
     /**
-     *返回true，则调用super方法。返回false，则不调用。
+     * 返回true，则调用super方法。返回false，则不调用。
      */
     public boolean onBackPressed() {
         if (LOGD) {
@@ -43,5 +44,8 @@ public class ActivityLifecycleListener {
     }
 
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (LOGD) {
+            Log.d(TAG, "onRequestPermissionsResult() {requestCode = " + requestCode + "}");
+        }
     }
 }

@@ -21,15 +21,20 @@ public abstract class BaseActivity<BindingView extends ViewBinding> extends AppC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mLifecycleListener = createLifecycleListener();
+        initRootBinding();
         initViewBinding();
-        onCreateViewModule();
-        newExternalRelations(); // new ExternalRelations(this) and  setLifecycleListener(), create modules, and set listeners for modules.
+        initManager();
         if (mLifecycleListener != null) {
-            mLifecycleListener.onModulesCreated();
+            mLifecycleListener.onViewCreated();
         }
     }
 
-    protected void initViewBinding() {
+    protected abstract void initViewBinding();
+
+    protected abstract void initManager();
+
+    protected void initRootBinding() {
         ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
         Class cls = (Class) type.getActualTypeArguments()[0];
         try {
@@ -45,14 +50,9 @@ public abstract class BaseActivity<BindingView extends ViewBinding> extends AppC
         return rootBinding;
     }
 
-    //创建模块之前
-    protected abstract void onCreateViewModule();
 
-    //外部关系模块
-    protected abstract void newExternalRelations();
-
-    protected void setLifecycleListener(ActivityLifecycleListener activityLifecycleListener) {
-        mLifecycleListener = activityLifecycleListener;
+    protected ActivityLifecycleListener createLifecycleListener() {
+        return new ActivityLifecycleListener();
     }
 
     @Override
@@ -96,5 +96,4 @@ public abstract class BaseActivity<BindingView extends ViewBinding> extends AppC
         }
     }
 
-    // onPause(), onDestroy(), onRequestPermissionsResult()等类似于onResume()一样
 }

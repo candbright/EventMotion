@@ -18,7 +18,7 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
             app:layout_constraintLeft_toLeftOf="@+id/container_bottom"
-            app:layout_constraintRight_toLeftOf="@+id/square_button"
+            app:layout_constraintRight_toLeftOf="@+id/official_button"
             app:layout_constraintTop_toTopOf="@+id/container_bottom">
 
             <ImageView
@@ -39,7 +39,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/square_button"
+            android:id="@+id/official_button"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_0"
             android:background="@color/pantone_flesh_1"
@@ -52,13 +52,13 @@
             app:layout_constraintTop_toTopOf="@+id/container_bottom">
 
             <ImageView
-                android:id="@+id/square_image"
+                android:id="@+id/official_image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_26"
                 android:src="@drawable/main_menu" />
 
             <TextView
-                android:id="@+id/square_tv"
+                android:id="@+id/official_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -68,7 +68,36 @@
                 android:textSize="@dimen/sp_10" />
         </LinearLayout>
 
-        <ImageView
+        <LinearLayout
+            android:id="@+id/mid_button"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
+            android:background="@color/pantone_flesh_1"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
+            app:layout_constraintLeft_toRightOf="@+id/official_button"
+            app:layout_constraintRight_toLeftOf="@+id/teach_button"
+            app:layout_constraintTop_toTopOf="@+id/container_bottom">
+
+            <ImageView
+                android:id="@+id/mid_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_26"
+                android:src="@drawable/main_menu" />
+
+            <TextView
+                android:id="@+id/mid_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:text="music"
+                android:textColor="@color/color_text_bottom_bar"
+                android:textSize="@dimen/sp_10" />
+        </LinearLayout>
+        <!--<ImageView
             android:id="@+id/mid_button"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_0"
@@ -79,7 +108,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/container_bottom"
             app:layout_constraintLeft_toRightOf="@+id/square_button"
             app:layout_constraintRight_toLeftOf="@+id/teach_button"
-            app:layout_constraintTop_toTopOf="@+id/container_bottom" />
+            app:layout_constraintTop_toTopOf="@+id/container_bottom" />-->
 
         <LinearLayout
             android:id="@+id/teach_button"

@@ -18,6 +18,10 @@ public abstract class BaseToolFragment extends Fragment {
         mContainerId = containerViewId;
     }
 
+    public int getColor(int colorRes) {
+        return getContext().getColor(colorRes);
+    }
+
     public void showToast(String text) {
         showToast(text, true);
     }

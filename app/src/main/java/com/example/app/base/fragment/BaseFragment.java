@@ -17,43 +17,44 @@ import java.lang.reflect.ParameterizedType;
  * 事件动机模式的View模块：
  * 当包含者Activity需要调用ExternalRelations中的业务数据或方法时，则使用这个BaseFragment2，否则使用BaseFragment。
  */
-public abstract class BaseFragment<ExternalRelations extends BaseFragmentExternalRelations,BindingView extends ViewBinding> extends BaseToolFragment {
+public abstract class BaseFragment<BindingView extends ViewBinding> extends BaseToolFragment {
 
-    private ExternalRelations mExternalRelations;
     private FragmentLifecycleListener mLifecycleListener;
-    protected BindingView viewBinding;
+    protected BindingView rootBinding;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mLifecycleListener = createLifecycleListener();
         ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
         Class cls = (Class) type.getActualTypeArguments()[0];
         try {
             Method inflate = cls.getDeclaredMethod("inflate", LayoutInflater.class, ViewGroup.class, boolean.class);
-            viewBinding = (BindingView) inflate.invoke(null, inflater, container, false);
-        }  catch (NoSuchMethodException | IllegalAccessException| InvocationTargetException e) {
+            rootBinding = (BindingView) inflate.invoke(null, inflater, container, false);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
-        return viewBinding.getRoot();
+        return rootBinding.getRoot();
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        onCreateViewModule();
-        mExternalRelations = newExternalRelations(); // new ExternalRelations(this) and  setLifecycleListener(), create modules, and set listeners for modules.
+        initViewBinding();
+        initManager();
         if (mLifecycleListener != null) {
-            mLifecycleListener.onModulesCreated();
+            mLifecycleListener.onViewCreated();
         }
     }
 
-    protected abstract void onCreateViewModule();
+    protected abstract void initViewBinding();
 
-    protected abstract ExternalRelations newExternalRelations();
+    protected abstract void initManager();
 
-    public ExternalRelations getExternalRelations() {
-        return mExternalRelations;
+    protected FragmentLifecycleListener createLifecycleListener() {
+        return new FragmentLifecycleListener();
     }
 
-    protected void setLifecycleListener(FragmentLifecycleListener activityLifecycleListener) {
-        mLifecycleListener = activityLifecycleListener;
+    public BindingView getRootBinding() {
+        return rootBinding;
     }
 
     @Override
@@ -83,7 +84,7 @@ public abstract class BaseFragment<ExternalRelations extends BaseFragmentExterna
     @Override
     public void onDestroyView() {
         //Fragment的存在时间比其视图长，需要清除对绑定类实例的所有引用
-        viewBinding = null;
+        rootBinding = null;
         if (mLifecycleListener != null) {
             mLifecycleListener.onDestroyView();
         }

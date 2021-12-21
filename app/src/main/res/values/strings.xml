@@ -25,6 +25,7 @@
     <string name="mode_remix">混音</string>
 
     <string name="navigation_bottom_songs">曲库</string>
+    <string name="navigation_bottom_songs_official">官谱</string>
     <string name="navigation_bottom_teach">教学</string>
     <string name="navigation_bottom_square">广场</string>
     <string name="navigation_bottom_collect">收藏</string>

@@ -10,7 +10,7 @@ import java.util.TimerTask;
 /**
  * created by wyh in 2021/11/16
  */
-public abstract class BaseToolActivity<BindingView extends ViewBinding> extends BaseActivity<BindingView> {
+public abstract class BaseExitActivity<BindingView extends ViewBinding> extends BaseActivity<BindingView> {
 
     private Toast exitToast;
 

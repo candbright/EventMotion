@@ -1,16 +1,15 @@
 package com.example.app.dao;
 
+import static com.example.app.main.SongListFragment.MODE_ALL;
+import static com.example.app.main.SongListFragment.MODE_DETAIL_ALL;
+
 import android.content.Context;
 
-import com.example.app.R;
 import com.example.app.common.bean.Song;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
 import java.util.List;
-
-import static com.example.app.main.MainActivity.MODE_ALL;
-import static com.example.app.main.MainActivity.MODE_DETAIL_ALL;
 
 /**
  * <p>created by wyh in 2021/12/13</p>
