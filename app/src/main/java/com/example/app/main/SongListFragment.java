@@ -40,8 +40,8 @@ public class SongListFragment extends BaseFragment<FragmentSongListBinding> {
     private static final String TAG = SongListFragment.class.getSimpleName();
     public static final String MODE_ALL = "MODE_ALL";
     public static final String MODE_DETAIL_ALL = "MODE_DETAIL_ALL";
-    NavigationBarBinding navigationBarTop;
-    SelectorBarBinding selectorBar;
+    private NavigationBarBinding navigationBarTop;
+    private SelectorBarBinding selectorBar;
     private NavigationBarManager navigationBarTopManager;
     private SongDaoHelper songDaoHelper;
 
@@ -63,6 +63,8 @@ public class SongListFragment extends BaseFragment<FragmentSongListBinding> {
             public void onViewCreated() {
                 super.onViewCreated();
                 initData();
+                 matchMode();
+                 matchModeDetail();
             }
         };
     }
@@ -70,9 +72,8 @@ public class SongListFragment extends BaseFragment<FragmentSongListBinding> {
     @Override
     protected void initManager() {
         songDaoHelper = SongDaoHelper.getInstance(getContext());
-        List<Song> songs = songDaoHelper.searchAll();
         navigationBarTopManager = new NavigationBarManager(navigationBarTop);
-        navigationBarTopManager.setTitle(R.string.main_title);
+        navigationBarTopManager.setTitle(R.string.title_all_song);
         navigationBarTopManager.setLeftOnClickListener(v -> {
 
         });
@@ -153,7 +154,6 @@ public class SongListFragment extends BaseFragment<FragmentSongListBinding> {
         List<Song> songs = songDaoHelper.searchAll();
         for (int i = 0; i < songs.size(); i++) {
             Song song = songs.get(i);
-            Log.d(TAG, "song[" + i + "].id = " + song.getId());
             mData.add(new ImageCardItem().setImageSource(song.getImageSrc())
                     .setSongName(song.getSongName())
                     .setDifficulty(song.getDifficulty())

@@ -22,11 +22,11 @@ public class ImageCardHolder extends BaseViewHolder<ImageCardItem, ItemCardImage
 
     @Override
     public void bindViewData(ImageCardItem data) {
-        viewBinding.songImage.setImageResource(Utility.getResId(data.getImageSource()));
-        viewBinding.songName.setText(String.format(GlobalApp.getResString(R.string.item_card_song_name), data.getSongName()));
-        viewBinding.songDifficulty.setText(String.format(GlobalApp.getResString(R.string.item_card_song_difficulty), data.getDifficulty()));
-        viewBinding.songDescription.setText(String.format(GlobalApp.getResString(R.string.item_card_song_description), data.getDescription()));
-        viewBinding.cardMain.setOnClickListener(v -> {
+        rootBinding.songImage.setImageResource(Utility.getResId(data.getImageSource()));
+        rootBinding.songName.setText(String.format(GlobalApp.getResString(R.string.item_card_song_name), data.getSongName()));
+        rootBinding.songDifficulty.setText(String.format(GlobalApp.getResString(R.string.item_card_song_difficulty), data.getDifficulty()));
+        rootBinding.songDescription.setText(String.format(GlobalApp.getResString(R.string.item_card_song_description), data.getDescription()));
+        rootBinding.cardMain.setOnClickListener(v -> {
             Log.d(TAG, "You have clicked the song list,the current song: " + data.getSongName() + "[id = " + data.getSortedIndex() + "].");
             mListener.onItemEvent(data.getSortedIndex(), null);
         });

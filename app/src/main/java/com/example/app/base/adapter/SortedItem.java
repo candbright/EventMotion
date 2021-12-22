@@ -25,7 +25,7 @@ public abstract class SortedItem<Holder extends BaseViewHolder, BindingView exte
             e.printStackTrace();
         }
         Holder viewHolder = createViewHolder(viewBinding);
-        viewHolder.viewBinding = viewBinding;
+        viewHolder.rootBinding = viewBinding;
         return viewHolder;
     }
 

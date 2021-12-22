@@ -9,7 +9,8 @@
     <string name="title_loading">加载中</string>
     <string name="common_refresh">刷新</string>
     <string name="fragment_register_title">注册</string>
-    <string name="main_title">歌曲列表</string>
+    <string name="title_all_song">歌曲列表</string>
+    <string name="title_official_song">官方曲谱</string>
     <string name="all_song">全部</string>
     <string name="mode_choose">模式选择</string>
     <string name="mode_fancy">花式</string>
@@ -28,6 +29,7 @@
     <string name="navigation_bottom_songs_official">官谱</string>
     <string name="navigation_bottom_teach">教学</string>
     <string name="navigation_bottom_square">广场</string>
+    <string name="navigation_bottom_my">我的</string>
     <string name="navigation_bottom_collect">收藏</string>
 
     <string name="item_card_song_name">歌曲名: 《%s》</string>

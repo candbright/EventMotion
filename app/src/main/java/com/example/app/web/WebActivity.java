@@ -75,14 +75,13 @@ public class WebActivity extends BaseActivity<ActivityWebBinding> {
         webViewManager = new WebViewManager(getRootBinding().webView, new BridgeWebViewClient(getRootBinding().webView) {
             @Override
             public boolean shouldOverrideUrlLoading(final WebView view, final String url) {
-                Log.d(TAG, "URL: " + url);
+                Log.i(TAG, "URL: " + url);
                 WebView.HitTestResult hit = view.getHitTestResult();
                 //hit.getExtra()为null或者hit.getType() == 0都表示即将加载的URL会发生重定向，需要做拦截处理
                 if (TextUtils.isEmpty(hit.getExtra()) || hit.getType() == 0) {
                     //通过判断开头协议就可解决大部分重定向问题了，有另外的需求可以在此判断下操作
-                    Log.e(TAG, "重定向: " + hit.getType() + " && EXTRA（）" + hit.getExtra() + "------");
-                    Log.e(TAG, "GetURL: " + view.getUrl() + "\n" + "getOriginalUrl()" + view.getOriginalUrl());
-                    Log.d(TAG, "URL: " + url);
+                    Log.i(TAG, "重定向: " + hit.getType() + " && EXTRA（）" + hit.getExtra() + "------");
+                    Log.i(TAG, "GetURL: " + view.getUrl() + "\n" + "getOriginalUrl()" + view.getOriginalUrl());
                 }
 
                 if (url.startsWith("http://") || url.startsWith("https://")) { //加载的url是http/https协议地址

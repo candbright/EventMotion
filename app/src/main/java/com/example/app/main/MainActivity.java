@@ -27,14 +27,14 @@ public class MainActivity extends BaseExitActivity<ActivityMainBinding> {
 
     @Override
     protected void initManager() {
-        fragmentManager = new ActivityFragmentManager(this);
-        fragmentManager.addFragmentToContainer(R.id.fragment_container, new SongListFragment());
+        fragmentManager = new ActivityFragmentManager(this, R.id.fragment_container);
+        fragmentManager.addOrReplaceFragment(new SongListFragment());
         navigationBottomBarManager = new NavigationBottomBarManager(navigationBarBottom);
         navigationBottomBarManager.setMusicButtonClickListener(v -> {
-
+            fragmentManager.addOrReplaceFragment(new SongListFragment());
         });
         navigationBottomBarManager.setOfficialButtonClickListener(v -> {
-
+            fragmentManager.addOrReplaceFragment(new SongOfficialFragment());
         });
         navigationBottomBarManager.setMidButtonClickListener(v -> {
 

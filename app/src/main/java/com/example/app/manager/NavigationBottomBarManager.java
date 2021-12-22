@@ -27,8 +27,8 @@ public class NavigationBottomBarManager {
         navigationBottomBar.midTv.setText(R.string.navigation_bottom_square);
         navigationBottomBar.teachImage.setImageResource(R.drawable.navigation_star_teach);
         navigationBottomBar.teachTv.setText(R.string.navigation_bottom_teach);
-        navigationBottomBar.collectImage.setImageResource(R.drawable.navigation_star_collect);
-        navigationBottomBar.collectTv.setText(R.string.navigation_bottom_collect);
+        navigationBottomBar.myImage.setImageResource(R.drawable.navigation_star_collect);
+        navigationBottomBar.myTv.setText(R.string.navigation_bottom_my);
 
         navigationBottomBar.midButton.setOnClickListener(v -> {
 
@@ -38,7 +38,7 @@ public class NavigationBottomBarManager {
     public void matchBottomTv() {
         navigationBottomBar.musicTv.setVisibility(View.GONE);
         navigationBottomBar.teachTv.setVisibility(View.GONE);
-        navigationBottomBar.collectTv.setVisibility(View.GONE);
+        navigationBottomBar.myTv.setVisibility(View.GONE);
         navigationBottomBar.midTv.setVisibility(View.GONE);
         navigationBottomBar.officialTv.setVisibility(View.GONE);
         switch (navigatorId) {
@@ -55,7 +55,7 @@ public class NavigationBottomBarManager {
                 navigationBottomBar.teachTv.setVisibility(View.VISIBLE);
                 break;
             case 4:
-                navigationBottomBar.collectTv.setVisibility(View.VISIBLE);
+                navigationBottomBar.myTv.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -94,7 +94,7 @@ public class NavigationBottomBarManager {
     }
 
     public void setCollectButtonClickListener(View.OnClickListener listener) {
-        navigationBottomBar.collectButton.setOnClickListener(v -> {
+        navigationBottomBar.myButton.setOnClickListener(v -> {
             navigatorId = 4;
             matchBottomTv();
             listener.onClick(v);

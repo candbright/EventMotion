@@ -11,7 +11,7 @@ public abstract class BaseViewHolder<Item extends SortedItem, BindingView extend
 
     protected OnItemEventListener mListener;
 
-    protected BindingView viewBinding;
+    protected BindingView rootBinding;
 
     public BaseViewHolder(View itemView) {
         super(itemView);
