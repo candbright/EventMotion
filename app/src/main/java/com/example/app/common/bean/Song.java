@@ -1,5 +1,6 @@
 package com.example.app.common.bean;
 
+import com.example.app.R;
 import com.example.app.dao.DaoSession;
 import com.example.app.dao.SongDao;
 import com.example.app.dao.StringConverter;
@@ -14,21 +15,13 @@ import org.greenrobot.greendao.annotation.ToMany;
 
 import java.util.List;
 import com.example.app.dao.SongCommentDao;
+import com.example.app.util.Utility;
 
 /**
  * <p>created by wyh in 2021/12/13</p>
  */
 @Entity
 public class Song {
-    public static final String MODE_FANCY = "MODE_FANCY";       //花式
-    public static final String MODE_RACE = "MODE_RACE";       //竞速
-
-    public static final String STUDY = "STUDY";       //学习
-    public static final String PERFORM = "PERFORM";     //表演
-    public static final String INSANE = "INSANE";      //疯狂
-    public static final String DOUBLE = "DOUBLE";      //双踏板
-    public static final String LOVER = "LOVER";      //情侣
-    public static final String REMIX = "REMIX";       //混音
     @Id(autoincrement = true)
     private Long id;
     //歌曲名称
@@ -104,7 +97,7 @@ public class Song {
     }
 
     public boolean isFancyMode() {
-        return songMode.equals(MODE_FANCY);
+        return songMode.equals(Utility.getString(R.string.mode_fancy));
     }
 
     public int getDifficulty() {

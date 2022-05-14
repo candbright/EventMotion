@@ -15,7 +15,7 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
         <activity
-            android:name=".main.MainActivity"
+            android:name=".layout.main.MainActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-            android:name=".web.WebActivity"
+            android:name=".layout.web.WebActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

@@ -36,4 +36,7 @@
     <string name="item_card_song_difficulty">难度: %d</string>
     <string name="item_card_song_description">简介: %s</string>
 
+    <!--            官方曲谱            -->
+    <string name="all_Year">全部</string>
+
 </resources>

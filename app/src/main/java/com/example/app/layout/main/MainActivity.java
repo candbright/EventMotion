@@ -1,4 +1,4 @@
-package com.example.app.main;
+package com.example.app.layout.main;
 
 import com.example.app.R;
 import com.example.app.base.activity.BaseExitActivity;

@@ -6,6 +6,8 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.util.Log;
 
+import androidx.core.content.ContextCompat;
+
 import com.example.app.global.GlobalApp;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -205,6 +207,14 @@ public class Utility {
             e.printStackTrace();
             return -1;
         }
+    }
+
+    public static int getColor(int id) {
+        return ContextCompat.getColor(GlobalApp.getInstance(), id);
+    }
+
+    public static String getString(int resourceId) {
+        return GlobalApp.getInstance().getResources().getString(resourceId);
     }
 
     public static float dip2px(float dpValue) {

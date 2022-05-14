@@ -1,8 +1,8 @@
 [
   {
     "songName": "baby",
-    "songMode": "MODE_RACE",
-    "songModeDetail": "INSANE",
+    "songMode": "竞速",
+    "songModeDetail": "疯狂",
     "difficulty": 4,
     "title": "",
     "imageSrc": "R.mipmap.baby",
@@ -13,8 +13,8 @@
   },
   {
     "songName": "breakdown",
-    "songMode": "MODE_RACE",
-    "songModeDetail": "INSANE",
+    "songMode": "竞速",
+    "songModeDetail": "疯狂",
     "difficulty": 11,
     "title": "b站e舞模拟器",
     "imageSrc": "R.mipmap.breakdown",
@@ -25,8 +25,8 @@
   },
   {
     "songName": "concerto",
-    "songMode": "MODE_RACE",
-    "songModeDetail": "REMIX",
+    "songMode": "竞速",
+    "songModeDetail": "情侣",
     "difficulty": 11,
     "title": "b站e舞模拟器",
     "imageSrc": "R.mipmap.concerto",
@@ -37,8 +37,8 @@
   },
   {
     "songName": "can't take my eyes off you",
-    "songMode": "MODE_FANCY",
-    "songModeDetail": "LOVER",
+    "songMode": "花式",
+    "songModeDetail": "情侣",
     "difficulty": 5,
     "title": "null",
     "imageSrc": "R.mipmap.cant_take_my_eyes_off_you",

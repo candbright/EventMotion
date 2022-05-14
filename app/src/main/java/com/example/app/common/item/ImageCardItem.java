@@ -1,5 +1,7 @@
 package com.example.app.common.item;
 
+import androidx.annotation.NonNull;
+
 import com.example.app.base.adapter.SortedItem;
 import com.example.app.common.holder.ImageCardHolder;
 import com.example.app.databinding.ItemCardImageBinding;
@@ -16,6 +18,7 @@ public class ImageCardItem extends SortedItem<ImageCardHolder, ItemCardImageBind
     private int difficulty;
     //歌曲描述
     private String description;
+
     public String getImageSource() {
         return imageSource;
     }
@@ -57,5 +60,9 @@ public class ImageCardItem extends SortedItem<ImageCardHolder, ItemCardImageBind
         return new ImageCardHolder(viewBinding.getRoot());
     }
 
-
+    @NonNull
+    @Override
+    public ImageCardItem clone() {
+        return (ImageCardItem) super.clone();
+    }
 }

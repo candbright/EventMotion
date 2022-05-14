@@ -6,12 +6,15 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.viewbinding.ViewBinding;
 
+import com.example.app.common.item.SelectorBarItem;
+
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 
-public abstract class SortedItem<Holder extends BaseViewHolder, BindingView extends ViewBinding> implements Cloneable {
-    private long sortedIndex;
+public abstract class SortedItem<Holder extends BaseViewHolder, BindingView extends ViewBinding> implements Cloneable, Serializable {
+    private int sortedIndex;
 
     public Holder bindViewHolder(ViewGroup parent) {
         ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
@@ -31,23 +34,23 @@ public abstract class SortedItem<Holder extends BaseViewHolder, BindingView exte
 
     protected abstract Holder createViewHolder(BindingView viewBinding);
 
-    public long getSortedIndex() {
+    public int getSortedIndex() {
         return sortedIndex;
     }
 
-    public SortedItem setSortedIndex(long index) {
+    public SortedItem setSortedIndex(int index) {
         this.sortedIndex = index;
         return this;
     }
 
-    @Override
-    public String toString() {
-        return String.valueOf(sortedIndex);
-    }
-
     @NonNull
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

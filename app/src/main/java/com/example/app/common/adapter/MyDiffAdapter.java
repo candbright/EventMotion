@@ -85,7 +85,12 @@ public class MyDiffAdapter extends BaseDiffAdapter {
         return -1;
     }
 
-    public SortedItem getRealItemClone(int sortIndex) {
+    /**
+     * 获取准备修改的Item，并将源数据中的Item变为拷贝，以便于和temp数据区分
+     * @param sortIndex
+     * @return
+     */
+    public SortedItem getChangedItem(int sortIndex) {
         int realIndex = getRealIndex(sortIndex);
         if (realIndex == -1) {
             return null;
@@ -96,6 +101,7 @@ public class MyDiffAdapter extends BaseDiffAdapter {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        datas.set(realIndex, copy);
         return copy;
     }
 }

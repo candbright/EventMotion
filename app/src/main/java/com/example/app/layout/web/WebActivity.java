@@ -1,4 +1,4 @@
-package com.example.app.web;
+package com.example.app.layout.web;
 
 import android.content.Intent;
 import android.net.Uri;
