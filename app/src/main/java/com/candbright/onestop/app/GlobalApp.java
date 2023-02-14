@@ -1,4 +1,4 @@
-package com.candbright.onestop.global;
+package com.candbright.onestop.app;
 
 import android.app.Application;
 import android.content.Context;

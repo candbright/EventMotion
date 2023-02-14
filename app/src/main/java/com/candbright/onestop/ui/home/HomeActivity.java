@@ -1,17 +1,17 @@
-package com.candbright.onestop.layout.main;
+package com.candbright.onestop.ui.home;
 
 import com.candbright.onestop.R;
 import com.candbright.onestop.base.activity.BaseExitActivity;
-import com.candbright.onestop.databinding.ActivityMainBinding;
+import com.candbright.onestop.databinding.ActivityHomeBinding;
 import com.candbright.onestop.databinding.NavigationBottomBarBinding;
 import com.candbright.onestop.manager.ActivityFragmentManager;
-import com.candbright.onestop.manager.NavigationBottomBarManager;
+import com.candbright.onestop.manager.widget.NavigationBottomBarManager;
 
 
 /**
  * <p>created by wyh in 2021/11/15</p>
  */
-public class MainActivity extends BaseExitActivity<ActivityMainBinding> {
+public class HomeActivity extends BaseExitActivity<ActivityHomeBinding> {
 
     private static final String TAG = "<MainActivity>";
 
@@ -32,21 +32,15 @@ public class MainActivity extends BaseExitActivity<ActivityMainBinding> {
     @Override
     protected void initManager() {
         fragmentManager = new ActivityFragmentManager(this, R.id.fragment_container);
-        fragmentManager.addOrReplaceFragment(new SongListFragment());
+        fragmentManager.addOrReplaceFragment(new QuestionBankFragment());
         navigationBottomBarManager = new NavigationBottomBarManager(navigationBarBottom);
-        navigationBottomBarManager.setMusicButtonClickListener(v -> {
-            fragmentManager.addOrReplaceFragment(new SongListFragment());
+        navigationBottomBarManager.setFirstButtonClickListener(v -> {
+            fragmentManager.addOrReplaceFragment(new QuestionBankFragment());
         });
-        navigationBottomBarManager.setOfficialButtonClickListener(v -> {
+        navigationBottomBarManager.setSecondButtonClickListener(v -> {
             fragmentManager.addOrReplaceFragment(new SongOfficialFragment());
         });
-        navigationBottomBarManager.setMidButtonClickListener(v -> {
-
-        });
-        navigationBottomBarManager.setTeachButtonClickListener(v -> {
-
-        });
-        navigationBottomBarManager.setCollectButtonClickListener(v -> {
+        navigationBottomBarManager.setThirdClickListener(v -> {
 
         });
     }

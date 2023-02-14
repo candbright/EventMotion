@@ -1,4 +1,4 @@
-package com.candbright.onestop.common.adapter;
+package com.candbright.onestop.model.adapter;
 
 import android.graphics.Rect;
 import android.view.View;

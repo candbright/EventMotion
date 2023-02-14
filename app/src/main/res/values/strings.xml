@@ -1,42 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">E舞吧</string>
-    <string name="blank_name">空白网页</string>
-    <string name="load_failed">加载失败</string>
-    <string name="bilibili_name">哔哩哔哩</string>
-    <string name="iqiyi_name">爱奇艺</string>
-    <string name="youku_name">优酷视频</string>
-    <string name="title_loading">加载中</string>
-    <string name="common_refresh">刷新</string>
-    <string name="fragment_register_title">注册</string>
-    <string name="title_all_song">歌曲列表</string>
-    <string name="title_official_song">官方曲谱</string>
-    <string name="all_song">全部</string>
-    <string name="mode_choose">模式选择</string>
-    <string name="mode_fancy">花式</string>
-    <string name="mode_fancy_title">花式模式</string>
-    <string name="mode_speed">竞速</string>
-    <string name="mode_speed_title">竞速模式</string>
+    <string name="title_question_bank">题库列表</string>
 
-    <string name="mode_study">学习</string>
-    <string name="mode_perform">表演</string>
-    <string name="mode_insane">疯狂</string>
-    <string name="mode_double">双踏板</string>
-    <string name="mode_lover">情侣</string>
-    <string name="mode_remix">混音</string>
+    <string name="navigation_bottom_first">题库</string>
+    <string name="navigation_bottom_second">答题</string>
+    <string name="navigation_bottom_third">我的</string>
 
-    <string name="navigation_bottom_songs">曲库</string>
-    <string name="navigation_bottom_songs_official">官谱</string>
-    <string name="navigation_bottom_teach">教学</string>
-    <string name="navigation_bottom_square">广场</string>
-    <string name="navigation_bottom_my">我的</string>
-    <string name="navigation_bottom_collect">收藏</string>
-
-    <string name="item_card_song_name">歌曲名: 《%s》</string>
-    <string name="item_card_song_difficulty">难度: %d</string>
-    <string name="item_card_song_description">简介: %s</string>
-
-    <!--            官方曲谱            -->
-    <string name="all_Year">全部</string>
+    <string name="subject_0">常识和百科</string>
+    <string name="subject_1">语文</string>
+    <string name="subject_2">数学</string>
+    <string name="subject_3">历史</string>
+    <string name="subject_4">地理</string>
+    <string name="subject_5">物理</string>
+    <string name="subject_6">化学</string>
+    <string name="subject_7">生物</string>
 
 </resources>

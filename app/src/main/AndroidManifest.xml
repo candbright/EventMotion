@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.candbright.onestop.global.GlobalApp"
+        android:name="com.candbright.onestop.app.GlobalApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"
@@ -15,7 +15,7 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
         <activity
-            android:name="com.candbright.onestop.layout.main.MainActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-            android:name="com.candbright.onestop.layout.web.WebActivity"
+            android:name=".ui.web.WebActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

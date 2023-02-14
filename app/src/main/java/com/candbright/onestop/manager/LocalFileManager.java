@@ -1,6 +1,6 @@
 package com.candbright.onestop.manager;
 
-import com.candbright.onestop.global.GlobalApp;
+import com.candbright.onestop.app.GlobalApp;
 
 /**
  * <p>created by wyh in 2021/12/16</p>

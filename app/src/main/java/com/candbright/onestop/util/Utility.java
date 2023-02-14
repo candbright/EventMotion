@@ -8,7 +8,7 @@ import android.util.Log;
 
 import androidx.core.content.ContextCompat;
 
-import com.candbright.onestop.global.GlobalApp;
+import com.candbright.onestop.app.GlobalApp;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -211,6 +211,10 @@ public class Utility {
 
     public static int getColor(int id) {
         return ContextCompat.getColor(GlobalApp.getInstance(), id);
+    }
+
+    public static String getString(String resourceKey) {
+        return getString(getResId(resourceKey, "string"));
     }
 
     public static String getString(int resourceId) {

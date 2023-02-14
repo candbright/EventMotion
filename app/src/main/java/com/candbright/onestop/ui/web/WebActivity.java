@@ -1,4 +1,4 @@
-package com.candbright.onestop.layout.web;
+package com.candbright.onestop.ui.web;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,8 +13,8 @@ import com.candbright.onestop.base.activity.ActivityLifecycleListener;
 import com.candbright.onestop.base.activity.BaseActivity;
 import com.candbright.onestop.databinding.ActivityWebBinding;
 import com.candbright.onestop.databinding.NavigationBarBinding;
-import com.candbright.onestop.global.GlobalApp;
-import com.candbright.onestop.manager.NavigationBarManager;
+import com.candbright.onestop.app.GlobalApp;
+import com.candbright.onestop.manager.widget.NavigationBarManager;
 import com.candbright.onestop.manager.WebViewManager;
 import com.github.lzyzsd.jsbridge.BridgeWebViewClient;
 

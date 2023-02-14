@@ -26,6 +26,13 @@
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/layout/song_list_fragment.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Z/Desktop/AndroidProjects/ItemTestDemo/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2140625" />
         <entry key="..\:/project-android/onestop/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/project-android/onestop/app/src/main/res/layout/fragment_song_list.xml" value="0.35885416666666664" />
+        <entry key="..\:/project-android/onestop/app/src/main/res/layout/fragment_song_official.xml" value="0.35885416666666664" />
+        <entry key="..\:/project-android/onestop/app/src/main/res/layout/item_bar_selector.xml" value="0.35885416666666664" />
+        <entry key="..\:/project-android/onestop/app/src/main/res/layout/item_card_image.xml" value="0.35885416666666664" />
+        <entry key="..\:/project-android/onestop/app/src/main/res/layout/item_mode_choose.xml" value="0.35885416666666664" />
+        <entry key="..\:/project-android/onestop/app/src/main/res/layout/navigation_bar.xml" value="0.35885416666666664" />
+        <entry key="..\:/project-android/onestop/app/src/main/res/layout/navigation_bottom_bar.xml" value="0.33" />
       </map>
     </option>
   </component>
